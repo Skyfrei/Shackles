@@ -17,6 +17,7 @@ public class CameraController : MonoBehaviour
     void Update () 
     {
         // Camera follows the player with specified offset position
-        transform.position = new Vector3 (player.position.x + offset.x, player.position.y + offset.y, this.transform.position.z); 
+        if (player != null)
+            transform.position = new Vector3 (player.position.x + offset.x, player.position.y + offset.y, this.transform.position.z); 
     }
 }

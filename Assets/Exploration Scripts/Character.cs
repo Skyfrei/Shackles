@@ -27,17 +27,17 @@ public class Character : MonoBehaviour
         Mana = 100;
     }
 
-    private void Awake() {
-        if (player == null)
-        {
-            DontDestroyOnLoad(gameObject);
-            player = this;
-        }
-        else if (player != this)
-        {
-            Destroy(gameObject);
-        }
-    }
+    // private void Awake() {
+    //     if (player == null)
+    //     {
+    //         DontDestroyOnLoad(gameObject);
+    //         player = this;
+    //     }
+    //     else if (player != this)
+    //     {
+    //         Destroy(gameObject);
+    //     }
+    // }
 
     // Update is called once per frame
     private void FixedUpdate()

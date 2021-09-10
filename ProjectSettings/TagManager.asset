@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Tilemap
+    uniqueID: 1886175055
+    locked: 0
+  - name: CharacterLayer
+    uniqueID: 1495924121
+    locked: 0
