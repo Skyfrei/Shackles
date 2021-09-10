@@ -16,10 +16,10 @@ public class EnemyDetection : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate() {
         
-        if (enemy.position.x - player.Position.x <= 1 && enemy.fought == false && (!(player.Position.y > enemy.position.y + 1)  && !(player.Position.y < enemy.position.y - 1)))
+        if (enemy.position.x - player.Position.x <= 1 && enemy.enemySO.fought == false && (!(player.Position.y > enemy.position.y + 1)  && !(player.Position.y < enemy.position.y - 1)))
         {
 
-            if (enemy.fought == false)
+            if (enemy.enemySO.fought == false)
             {
                 player.player_speed = 0f;
 

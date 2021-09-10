@@ -10,7 +10,7 @@ public class EnemyInCombat : MonoBehaviour
     public int armor;
     public HealthBar healthBar;
     public EnemyInCombat enemy;
-    public bool fought = false;
+    
 
     void Start()
     {
@@ -25,7 +25,7 @@ public class EnemyInCombat : MonoBehaviour
     {
        if (enemy.currentHealth <= 0)
        {
-           enemy.fought = true;
+        //    enemy.fought = true;
        }
     }
     public void TakeDamage(int damage)
