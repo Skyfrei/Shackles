@@ -22,17 +22,20 @@ public class Combat : MonoBehaviour
 
     void Start()
     {
+        //Finding objects from previous scene except healthbar which is new
         enemy = GameObject.FindObjectOfType<Enemy>();
         player = GameObject.Find("Character").GetComponent<Character>();
-        enemy.currentHealth = enemy.maxHealth;
         healthBar = GameObject.Find("Health Bar").GetComponent<HealthBar>();
-        healthBar.SetMaxHealth(Mathf.RoundToInt(enemy.maxHealth));
-
-
+        
+        //Button component
         basicAttack = GameObject.Find("Basic Attack").GetComponent<Button>();
         secondButton = GameObject.Find("Second Button").GetComponent<Button>();
         thirdButton = GameObject.Find("Third Button").GetComponent<Button>();
         forthButton = GameObject.Find("Forth Button").GetComponent<Button>();
+        
+        enemy.currentHealth = enemy.maxHealth;
+        enemy.transform.position = new Vector3(3.7f, 1.3f , 0);
+        healthBar.SetMaxHealth(Mathf.RoundToInt(enemy.maxHealth));
     }
     // Update is called once per frame
 
@@ -41,17 +44,17 @@ public class Combat : MonoBehaviour
         if (enemy.currentHealth <= 0)
         {
             SceneChanger sc = new SceneChanger();
+            player.player_speed = 2.4f;
             Destroy(enemy.gameObject);
             DontDestroyOnLoad(player);
-            player.player_speed = 2.4f;
             sc.ChangeToNormalScreen();
         }
         if (player.HP <= 0)
         {
             player.enemiesFough.Remove(enemy.id);
+            player.player_speed = 2.4f;
             Destroy(enemy.gameObject);
             DontDestroyOnLoad(player);
-            player.player_speed = 2.4f;
             SceneChanger sc = new SceneChanger();
             sc.ChangeToNormalScreen();
             

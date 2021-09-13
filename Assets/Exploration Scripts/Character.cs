@@ -8,8 +8,8 @@ public class Character : MonoBehaviour
     private Rigidbody2D controller;
     public float player_speed = 2.4f;
     public Vector2 Position{get; set;}
-    //Stats
     public static Character player;
+    //Stats
     public float HP{get; set;}
     public float Armor{get; set;}
     public float ATK{get; set;}
