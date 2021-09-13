@@ -61,7 +61,7 @@ public class Combat : MonoBehaviour
         }
     }
 
-     private void NextTurn()
+    private void NextTurn()
     {
         playerTurn = false;
     }
