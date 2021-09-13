@@ -27,6 +27,17 @@ public class Character : MonoBehaviour
         Mana = 100;
     }
 
+    private void Awake() {
+        if (player == null)
+        {
+            player = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     // private void Awake() {
     //     if (player == null)
     //     {

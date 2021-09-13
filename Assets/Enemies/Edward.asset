@@ -15,3 +15,5 @@ MonoBehaviour:
   name: Edward
   id: 0
   sprite: {fileID: 21300082, guid: 7810966f0f690954c87305933cabf2b0, type: 3}
+  armor: 20
+  maxhealth: 100

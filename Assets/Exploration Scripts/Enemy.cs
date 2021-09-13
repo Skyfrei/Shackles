@@ -12,11 +12,16 @@ public class Enemy : MonoBehaviour
     private SpriteRenderer artwork;
     public int id;
     private Character player;
+    public float maxHealth;
+    public float currentHealth;
+    public int armor;
     void Start() {
         player = GameObject.FindObjectOfType<Character>();
 
         artwork.sprite = enemySO.sprite;
         id = enemySO.id;
+        armor = enemySO.armor;
+        maxHealth = enemySO.maxhealth;
    }
    private void FixedUpdate() {
         Detect();
@@ -28,6 +33,7 @@ public class Enemy : MonoBehaviour
         {
             if (!(player.enemiesFough.Contains(this.id)))
             {
+                player.enemiesFough.Add(this.id);
                 DontDestroyOnLoad(player.gameObject);
                 DontDestroyOnLoad(this.gameObject);
                 player.player_speed = 0f;
@@ -36,10 +42,15 @@ public class Enemy : MonoBehaviour
             }
         }
     }
+
+    public void TakeDamage(int damage)
+    {
+        this.currentHealth -= damage - 0.25f * this.armor;
+    }
+    
     private IEnumerator Timer()
     {
         yield return new WaitForSeconds(2.0f);
-        player.player_speed = 2.4f;
         SceneChanger changer = new SceneChanger();
         changer.ChangeToBattleScene();
         
