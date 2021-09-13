@@ -14,10 +14,13 @@ public class Character_Battle : MonoBehaviour
     private Character player;
     private bool playerTurn = true;
     private EnemyInCombat enemy;
+    private Enemy enemyref;
     void Start()
     {
-        enemy = GameObject.Find("Enemy").GetComponent<EnemyInCombat>();
+        enemy = GameObject.Find("EnemyHP").GetComponent<EnemyInCombat>();
         player = GameObject.Find("Character").GetComponent<Character>();
+
+        enemyref = GameObject.Find("Enemy").GetComponent<Enemy>();
 
         basicAttack = GameObject.Find("Basic Attack").GetComponent<Button>();
         secondButton = GameObject.Find("Second Button").GetComponent<Button>();
@@ -25,31 +28,27 @@ public class Character_Battle : MonoBehaviour
         forthButton = GameObject.Find("Forth Button").GetComponent<Button>();
     }
 
-    // Update is called once per frame
-    
-    void Update()
-    {
-        if (enemy.currentHealth <= 0)
-        {
-            SceneChanger sc = new SceneChanger();
-            sc.ChangeToNormalScreen();
-        }    
-        if (player.HP <= 0)
-        {
-            SceneChanger sc = new SceneChanger();
-            sc.ChangeToNormalScreen();
-        }
+    // void FixedUpdate()
+    // {
+    //     if (enemy.currentHealth <= 0)
+    //     {
+    //         player.enemiesFough.Add(enemyref.id);
+    //         SceneChanger sc = new SceneChanger();
+    //         sc.ChangeToNormalScreen();
+    //     }    
+    //     if (player.HP <= 0)
+    //     {
+    //         SceneChanger sc = new SceneChanger();
+    //         sc.ChangeToNormalScreen();
+    //     }
 
-        if (playerTurn == false) 
-        {
-            player.HP -= enemy.DealDamage() - 0.35f * player.Armor;
-            Debug.Log(player.HP);
-            playerTurn = true;
-        }
-    }
-    private void OnDisable() {
-        PlayerPrefs.SetInt("fought", 1);
-    }
+    //     if (playerTurn == false) 
+    //     {
+    //         player.HP -= enemy.DealDamage() - 0.35f * player.Armor;
+    //         Debug.Log(player.HP);
+    //         playerTurn = true;
+    //     }
+    // }
 
     private void NextTurn()
     {

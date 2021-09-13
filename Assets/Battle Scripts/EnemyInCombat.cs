@@ -20,14 +20,6 @@ public class EnemyInCombat : MonoBehaviour
         healthBar.SetMaxHealth(Mathf.RoundToInt(enemy.maxHealth));
     }
     // Update is called once per frame
-    
-    void Update()
-    {
-       if (enemy.currentHealth <= 0)
-       {
-        //    enemy.fought = true;
-       }
-    }
     public void TakeDamage(int damage)
     {
         enemy.currentHealth -= damage - 0.25f * enemy.armor;

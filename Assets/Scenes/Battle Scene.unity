@@ -598,6 +598,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player_speed: 2.4
+  enemiesFough: 
 --- !u!1 &347668522
 GameObject:
   m_ObjectHideFlags: 0
@@ -745,7 +746,7 @@ GameObject:
   - component: {fileID: 465323148}
   - component: {fileID: 465323152}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: EnemyHP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -879,7 +880,6 @@ MonoBehaviour:
   armor: 0
   healthBar: {fileID: 0}
   enemy: {fileID: 0}
-  fought: 0
 --- !u!1 &671493303
 GameObject:
   m_ObjectHideFlags: 0
@@ -2430,8 +2430,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 481, y: 100}
-  m_SizeDelta: {x: 962, y: 200}
+  m_AnchoredPosition: {x: 671, y: 100}
+  m_SizeDelta: {x: 1342, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1789506396
 MonoBehaviour:
