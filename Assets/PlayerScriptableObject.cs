@@ -12,7 +12,7 @@ public class PlayerScriptableObject : ScriptableObject
     public float defense;
     public float health;
     public SpriteRenderer artwork;
-
+    public List<Items> items;
     void Start()
     {
         

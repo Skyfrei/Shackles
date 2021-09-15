@@ -18,7 +18,6 @@ public class Combat : MonoBehaviour
     public Button secondButton;
     public Button thirdButton;
     public Button forthButton;
-    
 
     void Start()
     {
@@ -33,11 +32,11 @@ public class Combat : MonoBehaviour
         thirdButton = GameObject.Find("Third Button").GetComponent<Button>();
         forthButton = GameObject.Find("Forth Button").GetComponent<Button>();
         
+        //Linking Health bar with enemy health and repositioning enemy so it looks better on screen
         enemy.currentHealth = enemy.maxHealth;
         enemy.transform.position = new Vector3(3.7f, 1.3f , 0);
         healthBar.SetMaxHealth(Mathf.RoundToInt(enemy.maxHealth));
     }
-    // Update is called once per frame
 
     private void FixedUpdate()
     {
