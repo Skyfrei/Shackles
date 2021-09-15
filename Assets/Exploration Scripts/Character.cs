@@ -6,7 +6,7 @@ public class Character : MonoBehaviour
 {
     // Start is called before the first frame update
     private Rigidbody2D controller;
-    public float player_speed = 2.4f;
+    public float player_speed;
     public Vector2 Position{get; set;}
     public static Character player;
     //Stats
