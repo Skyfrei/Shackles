@@ -43,7 +43,7 @@ public class Combat : MonoBehaviour
         if (enemy.currentHealth <= 0)
         {
             SceneChanger sc = new SceneChanger();
-            player.player_speed = 2.4f;
+            player.player_speed = 5.0f;
             Destroy(enemy.gameObject);
             DontDestroyOnLoad(player);
             sc.ChangeToNormalScreen();
@@ -51,7 +51,7 @@ public class Combat : MonoBehaviour
         if (player.HP <= 0)
         {
             player.enemiesFough.Remove(enemy.id);
-            player.player_speed = 2.4f;
+            player.player_speed = 5.0f;
             Destroy(enemy.gameObject);
             DontDestroyOnLoad(player);
             SceneChanger sc = new SceneChanger();
