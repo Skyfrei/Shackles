@@ -19,7 +19,7 @@ public class RightWalls : MonoBehaviour
     {
         if (player.Position.x + 0.35 >= wallPosition.x)
         {
-            Debug.Log("Monkey");
+            
         }
     }
 }

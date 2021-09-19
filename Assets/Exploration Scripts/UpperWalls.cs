@@ -16,7 +16,7 @@ public class UpperWalls : MonoBehaviour
     private void FixedUpdate() {
         if (player.Position.y + 0.35 >= wallPosition.y)
         {
-            Debug.Log("Monkey");
+            
         }
     }
 }

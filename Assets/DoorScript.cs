@@ -2,24 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LowerWalls : MonoBehaviour
+public class DoorScript : MonoBehaviour
 {
     // Start is called before the first frame update
     private Character player;
-    private Vector2 wallPosition;
-
+    private Vector2 position;
     void Start()
     {
-        wallPosition = this.transform.position;
         player = GameObject.FindObjectOfType<Character>();
+        position = this.transform.position;
     }
 
     // Update is called once per frame
-    private void FixedUpdate()
+    void Update()
     {
-        if (player.Position.y - 0.35 <= wallPosition.y)
+        
+        if (player.CollisionDetection((RectTransform)this.transform))
         {
-            
+            Debug.Log("Collision detected");
         }
     }
 }

@@ -17,7 +17,7 @@ public class LeftWalls : MonoBehaviour
     private void FixedUpdate() {
         if (player.Position.x - 0.35 <= wallPosition.x)
         {
-            Debug.Log("Monkey");
+            
         }
     }
 }
