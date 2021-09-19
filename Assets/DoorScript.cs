@@ -14,12 +14,4 @@ public class DoorScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-        if (player.CollisionDetection((RectTransform)this.transform))
-        {
-            Debug.Log("Collision detected");
-        }
-    }
 }

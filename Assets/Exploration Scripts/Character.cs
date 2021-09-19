@@ -17,16 +17,10 @@ public class Character : MonoBehaviour
     // public float CritDamage{get; set;}
     // private float critChance = 10.0f;
     public List<int> enemiesFough;
-    private RectTransform rt;
-    private float width;
-    private float height;
 
     void Start()
     {   
-        rt = (RectTransform)player.transform;
         controller = GetComponent<Rigidbody2D>();
-        width = rt.rect.width;
-        height = rt.rect.height;
         HP = 150;
         Armor = 100;
         ATK = 100;
@@ -49,20 +43,10 @@ public class Character : MonoBehaviour
         controller.position += move * Time.deltaTime * player_speed;
         Position = controller.position;
     }
-
-    public bool CollisionDetection(RectTransform structurePosition)
-    {
-        float structWidth = structurePosition.rect.width;
-        float structHeight = structurePosition.rect.width;
-
-        //Collision detection 
-        if (player.Position.x < structurePosition.position.x + structWidth &&
-            player.Position.x + player.width > structurePosition.position.x &&
-            player.Position.y < structurePosition.position.y + structHeight &&
-            player.Position.y + player.height > structurePosition.position.y)
-            {
-                return true;
-            }
-        return false;
-    }
+    // private void OnCollisionStay2D(Collision2D other) {
+    //     if (other.gameObject.name == "Door")
+    //     {
+    //         Debug.Log("asd");
+    //     }
+    // }
 }
