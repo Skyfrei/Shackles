@@ -7,9 +7,7 @@ public class Items : MonoBehaviour
     public bool equipped;
     public int id;
     public bool owned;
-
     
-
     [SerializeField]
     private string itemName;
     public int cost;

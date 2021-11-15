@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Skills;
+using ItemsEquipped;
 
-public class Character : MonoBehaviour
+public class Character : MonoBehaviour, ISkills//, IItemsEquipped
 {
     // Start is called before the first frame update
     private Rigidbody2D controller;
@@ -43,6 +45,25 @@ public class Character : MonoBehaviour
         controller.position += move * Time.deltaTime * player_speed;
         Position = controller.position;
     }
+
+    //Skills
+    public void Skill1()
+    {
+
+    }
+    public void Skill2()
+    {
+
+    }
+    public void Skill3()
+    {
+
+    }
+    public void Skill4()
+    {
+
+    }
+
     // private void OnCollisionStay2D(Collision2D other) {
     //     if (other.gameObject.name == "Door")
     //     {

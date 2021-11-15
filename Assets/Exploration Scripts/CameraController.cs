@@ -12,6 +12,7 @@ public class CameraController : MonoBehaviour
 
     private void Start() {
         character = GameObject.FindObjectOfType<Character>();
+        Screen.SetResolution(1920, 1080, false, 60);
     }
     void Update () 
     {

@@ -40,6 +40,7 @@ public class Combat : MonoBehaviour
 
     private void FixedUpdate()
     {
+
         if (enemy.currentHealth <= 0)
         {
             SceneChanger sc = new SceneChanger();
@@ -48,7 +49,7 @@ public class Combat : MonoBehaviour
             DontDestroyOnLoad(player);
             sc.ChangeToNormalScreen();
         }
-        if (player.HP <= 0)
+        else if (player.HP <= 0)
         {
             player.enemiesFough.Remove(enemy.id);
             player.player_speed = 5.0f;
@@ -56,20 +57,24 @@ public class Combat : MonoBehaviour
             DontDestroyOnLoad(player);
             SceneChanger sc = new SceneChanger();
             sc.ChangeToNormalScreen();
-            
         }
     }
 
     private void NextTurn()
     {
-        playerTurn = false;
+        playerTurn = !playerTurn;
     }
     
     private void BasicAttack()
     {
-        enemy.TakeDamage(20);
-        healthBar.SetHealth(Mathf.RoundToInt(enemy.currentHealth));
-        NextTurn();
+        if (playerTurn == true)
+        {
+            enemy.TakeDamage(20);
+            healthBar.SetHealth(Mathf.RoundToInt(enemy.currentHealth));
+            NextTurn();
+        }
     }
+
+    
     
 }
