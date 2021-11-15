@@ -1,6 +1,5 @@
 using UnityEngine;
 
-
 [CreateAssetMenu(fileName = "item", menuName = "Item")]
 public class ItemsScriptableObject : ScriptableObject
 {
@@ -8,9 +7,6 @@ public class ItemsScriptableObject : ScriptableObject
     public Sprite artwork;
     public int cost;
     public bool equipped;
-
-    void Start()
-    {
-        
-    }
+    public string itemName;
+    public int id;
 }

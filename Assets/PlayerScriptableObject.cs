@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,6 +14,6 @@ public class PlayerScriptableObject : ScriptableObject
     public List<Items> items;
     void Start()
     {
-        
+
     }
 }
