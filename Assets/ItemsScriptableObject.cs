@@ -10,6 +10,7 @@ public class ItemsScriptableObject : ScriptableObject
     public string itemName;
     public int id;
     public List<int> components;
+
     //Showing the enum in c# inspector
     [SerializeField]
     private itemType itemTypeEnum;
