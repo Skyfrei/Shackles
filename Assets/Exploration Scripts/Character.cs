@@ -11,6 +11,7 @@ public class Character : MonoBehaviour, ISkills, IItemsEquipped
     public float player_speed;
     public Vector2 Position{get; set;}
     public static Character player;
+
     //Stats
     public float HP{get; set;}
     public float Armor{get; set;}
@@ -20,6 +21,8 @@ public class Character : MonoBehaviour, ISkills, IItemsEquipped
     // private float critChance = 10.0f;
     public List<int> enemiesFough;
 
+    public List<Items> items;
+
     //Items Equipped
     public int ShoesId { get; set; }
     public int HelmetId { get; set; }
@@ -27,6 +30,7 @@ public class Character : MonoBehaviour, ISkills, IItemsEquipped
     public int RingId { get; set; }
     public int NecklaceId { get; set; }
     public int ArmorId { get; set; }
+
 
     void Start()
     {   
