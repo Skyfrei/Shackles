@@ -4,7 +4,7 @@ using UnityEngine;
 using Skills;
 using ItemsEquipped;
 
-public class Character : MonoBehaviour, ISkills//, IItemsEquipped
+public class Character : MonoBehaviour, ISkills, IItemsEquipped
 {
     // Start is called before the first frame update
     private Rigidbody2D controller;
@@ -19,6 +19,14 @@ public class Character : MonoBehaviour, ISkills//, IItemsEquipped
     // public float CritDamage{get; set;}
     // private float critChance = 10.0f;
     public List<int> enemiesFough;
+
+    //Items Equipped
+    public int ShoesId { get; set; }
+    public int HelmetId { get; set; }
+    public int WeaponId { get; set; }
+    public int RingId { get; set; }
+    public int NecklaceId { get; set; }
+    public int ArmorId { get; set; }
 
     void Start()
     {   

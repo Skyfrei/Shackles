@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using ItemsEquipped;
 
 // Class that handles enemy position in exploration. 
 // Enemy dialog, position, if the enemy has fought or not goes in this script.
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IItemsEquipped 
 {
     [SerializeField]
     private EnemyScriptableObject enemySO;
@@ -15,6 +16,15 @@ public class Enemy : MonoBehaviour
     public float maxHealth;
     public float currentHealth;
     public int armor;
+
+    //Items equipped
+    public int ShoesId { get; set; }
+    public int HelmetId { get; set; }
+    public int WeaponId { get; set; }
+    public int RingId { get; set; }
+    public int NecklaceId { get; set; }
+    public int ArmorId { get; set; }
+
     void Start() {
         player = GameObject.FindObjectOfType<Character>();
 
