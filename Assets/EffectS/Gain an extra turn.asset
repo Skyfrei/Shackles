@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c3a34ff75dba554abb6780f2646af4c, type: 3}
   m_Name: Gain an extra turn
   m_EditorClassIdentifier: 
-  description: 
+  description: Extra turn
   cooldown: 0
+  effectManager: {fileID: 11400000, guid: 279540faa46c5fd47a24c5f729f0c23f, type: 2}

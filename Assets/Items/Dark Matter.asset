@@ -16,7 +16,7 @@ MonoBehaviour:
   artwork: {fileID: 0}
   cost: 400
   itemName: Dark Matter
-  id: 0
+  id: 7
   components: 
-  itemTypeEnum: 0
+  itemTypeEnum: 3
   itemRarityEnum: 0

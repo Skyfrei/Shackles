@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c183df88e2fe1b043aa33bdb75d29879, type: 3}
   m_Name: Jewel of the Crown
   m_EditorClassIdentifier: 
-  description: 
+  description: The fallen king's jewel remains as one of the items of antiquity,
+    as such the Jewel is cursed and he who dares  touch it will leave not even his
+    rotting bones behind.
   artwork: {fileID: 0}
-  cost: 0
-  equipped: 0
-  itemName: 
-  id: 0
+  cost: 2900
+  itemName: Jewel of the Crown
+  id: 2
+  components: 
+  itemTypeEnum: 3
+  itemRarityEnum: 3

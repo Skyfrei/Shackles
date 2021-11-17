@@ -9,14 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c183df88e2fe1b043aa33bdb75d29879, type: 3}
-  m_Name: Metal Ring
+  m_Script: {fileID: 11500000, guid: 0c80ac7b1cf231d4386da008328e67df, type: 3}
+  m_Name: EffectManager
   m_EditorClassIdentifier: 
-  description: A dulled metal ring
-  artwork: {fileID: 0}
-  cost: 400
-  itemName: Metal Ring
-  id: 4
-  components: 
-  itemTypeEnum: 2
-  itemRarityEnum: 0
+  effectSoList:
+  - {fileID: 11400000, guid: 23639354d03e8b141a872c8ceb107fa0, type: 2}
+  - {fileID: 11400000, guid: 6f17d3413782066449ccf5251390c578, type: 2}

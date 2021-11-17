@@ -16,6 +16,7 @@ public class Items : MonoBehaviour
     private Sprite artwork;
     [SerializeField]
     private ItemsScriptableObject itemSO;
+    public EffectManager effects;
 
     void Start()
     {

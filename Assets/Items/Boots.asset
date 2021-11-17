@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c183df88e2fe1b043aa33bdb75d29879, type: 3}
   m_Name: Boots
   m_EditorClassIdentifier: 
-  description: 
+  description: You wear them, duh.
   artwork: {fileID: 0}
-  cost: 0
-  itemName: 
-  id: 0
+  cost: 300
+  itemName: Boots
+  id: 6
   components: 
-  itemTypeEnum: 0
+  itemTypeEnum: 4
   itemRarityEnum: 0

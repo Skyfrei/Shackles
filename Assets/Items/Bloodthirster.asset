@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c183df88e2fe1b043aa33bdb75d29879, type: 3}
   m_Name: Bloodthirster
   m_EditorClassIdentifier: 
-  description: 
+  description: Makes the user bloodlusty.
   artwork: {fileID: 0}
-  cost: 0
-  equipped: 0
-  itemName: 
+  cost: 3200
+  itemName: BloodThirster
   id: 0
+  components: 
+  itemTypeEnum: 0
+  itemRarityEnum: 3
