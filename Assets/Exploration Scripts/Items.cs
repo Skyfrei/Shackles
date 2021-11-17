@@ -6,17 +6,16 @@ public class Items : MonoBehaviour
 {
     public bool equipped;
     public int id;
+    public int cost;
 
     [SerializeField]
     private string itemName;
-    public int cost;
     [SerializeField]
     private string description;
     [SerializeField]
     private Sprite artwork;
     [SerializeField]
     private ItemsScriptableObject itemSO;
-    public EffectManager effects;
 
     void Start()
     {
@@ -25,5 +24,6 @@ public class Items : MonoBehaviour
         artwork = itemSO.artwork;
         itemName = itemSO.itemName;
         id = itemSO.id;
+        
     } 
 }

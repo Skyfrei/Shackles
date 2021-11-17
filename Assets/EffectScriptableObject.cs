@@ -4,9 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName ="effects", menuName = "Effect")]
-public class EffectScriptableObject : ScriptableObject 
+public class EffectScriptableObject : EffectManager 
 {
     public string description;
     public int cooldown;
-    public EffectManager effectManager;
 }
