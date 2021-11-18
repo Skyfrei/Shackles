@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: Shield
   m_EditorClassIdentifier: 
   description: Shields you from incoming damage
-  cooldown: 0
-  effectManager: {fileID: 11400000, guid: 279540faa46c5fd47a24c5f729f0c23f, type: 2}
+  cooldown: 2

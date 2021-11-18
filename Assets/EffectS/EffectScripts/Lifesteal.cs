@@ -3,13 +3,21 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 
-public class Lifesteal : EffectManager
+public interface IEffects
 {
+    void PreAttack();
+    void DuringAttack();
+    void PastAttack();
+}
+
+public class Lifesteal : EffectManager, IEffects
+{
+    public EffectScriptableObject effObj;    
     public Lifesteal()
     {
-        effectSoList[0].PreAttack();
+
     }
-    public override void PreAttack(){Console.WriteLine("Sup mate");}
-    public override void DuringAttack(){}
-    public override void PastAttack(){}
+    public void PreAttack(){}
+    public void DuringAttack(){}
+    public void PastAttack(){}
 }

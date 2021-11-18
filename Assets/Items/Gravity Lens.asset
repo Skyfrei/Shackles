@@ -19,5 +19,6 @@ MonoBehaviour:
   itemName: Gravity Lens
   id: 5
   components: 07000000
+  effect: {fileID: 0}
   itemTypeEnum: 3
   itemRarityEnum: 3
