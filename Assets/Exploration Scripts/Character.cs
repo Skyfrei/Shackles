@@ -62,10 +62,11 @@ public class Character : MonoBehaviour, ISkills, IItemsEquipped
 
     public void GetEquippedItems()
     {
-        for (int i = 0; i < 2; i++)
-        {
-            items.Add(GameObject.FindObjectOfType<Items>());
-        }
+        items.Add(GameObject.Find("Weapon").GetComponent<Items>());
+        // for (int i = 0; i < 2; i++)
+        // {
+        //     items.Add(GameObject.FindObjectOfType<Items>());
+        // }
     }
 
     //Skills
