@@ -24,6 +24,7 @@ public class Combat : MonoBehaviour
         //Finding objects from previous scene except healthbar which is new
         enemy = GameObject.FindObjectOfType<Enemy>();
         player = GameObject.Find("Character").GetComponent<Character>();
+        player.GetEquippedItems();
         healthBar = GameObject.Find("Health Bar").GetComponent<HealthBar>();
         
         //Button component
@@ -69,6 +70,11 @@ public class Combat : MonoBehaviour
     {
         if (playerTurn == true)
         {
+            
+            if (player.items[0].itemEffects[0] is IEffect effect)
+            {
+                effect.PastAttack();
+            }
             enemy.TakeDamage(20);
             healthBar.SetHealth(Mathf.RoundToInt(enemy.currentHealth));
             NextTurn();

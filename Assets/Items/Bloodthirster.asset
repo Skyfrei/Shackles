@@ -18,6 +18,7 @@ MonoBehaviour:
   itemName: BloodThirster
   id: 0
   components: 
-  effect: {fileID: 0}
+  itemEffects:
+  - {fileID: 11400000, guid: 23639354d03e8b141a872c8ceb107fa0, type: 2}
   itemTypeEnum: 0
   itemRarityEnum: 3

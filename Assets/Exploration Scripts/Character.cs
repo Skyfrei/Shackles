@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Skills;
@@ -21,6 +20,9 @@ public class Character : MonoBehaviour, ISkills, IItemsEquipped
     // private float critChance = 10.0f;
     public List<int> enemiesFough;
 
+    ///<summary>
+    ///  Character inventory, which also holds which item is equipped.
+    ///</summary>
     public List<Items> items;
 
     //Items Equipped
@@ -58,10 +60,18 @@ public class Character : MonoBehaviour, ISkills, IItemsEquipped
         Position = controller.position;
     }
 
+    public void GetEquippedItems()
+    {
+        for (int i = 0; i < 2; i++)
+        {
+            items.Add(GameObject.FindObjectOfType<Items>());
+        }
+    }
+
     //Skills
     public void Skill1()
     {
-
+        
     }
     public void Skill2()
     {

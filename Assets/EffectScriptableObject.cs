@@ -1,7 +1,10 @@
 using System;
-using System.IO;
-using System.Collections.Generic;
 using UnityEngine;
+
+public interface IEffect
+{
+    void PastAttack();
+}
 
 [CreateAssetMenu(fileName ="effects", menuName = "Effect")]
 public class EffectScriptableObject : ScriptableObject 
@@ -10,7 +13,7 @@ public class EffectScriptableObject : ScriptableObject
 }
 
 [CreateAssetMenu(fileName ="effects", menuName = "Lifesteal Effect")]
-public class LifestealScriptableObject : EffectScriptableObject
+public class LifestealScriptableObject : EffectScriptableObject, IEffect
 {
     public override string Description
     {
@@ -24,10 +27,10 @@ public class LifestealScriptableObject : EffectScriptableObject
         }
     }
     
-
     public void PastAttack()
     {   
-
+        Debug.Log(Description);
+        Debug.Log("meme");
     }
 }
 

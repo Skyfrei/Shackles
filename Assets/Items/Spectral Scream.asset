@@ -19,5 +19,8 @@ MonoBehaviour:
   itemName: Spectral Scream
   id: 4
   components: 
+  itemEffects:
+  - {fileID: 11400000, guid: d45c4a79abe883544a15150de84687a6, type: 2}
+  - {fileID: 11400000, guid: b45db84848d826f4192d0cb3fe828168, type: 2}
   itemTypeEnum: 1
   itemRarityEnum: 2
