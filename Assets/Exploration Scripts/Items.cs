@@ -20,15 +20,15 @@ public class Items : MonoBehaviour
 
     void Start()
     {
-        this.cost = itemSO.cost;
-        this.description = itemSO.description;
-        this.artwork = itemSO.artwork;
-        this.itemName = itemSO.itemName;
-        this.id = itemSO.id;
-        this.components = itemSO.components;
-        this.itemEffects = itemSO.itemEffects;
-        this.itemTypeEnum = itemSO.itemTypeEnum;
-        this.itemRarityEnum = itemSO.itemRarityEnum;
-        this.equipped = true;
+        cost = itemSO.cost;
+        description = itemSO.description;
+        artwork = itemSO.artwork;
+        itemName = itemSO.itemName;
+        id = itemSO.id;
+        components = itemSO.components;
+        itemEffects = itemSO.itemEffects;
+        itemTypeEnum = itemSO.itemTypeEnum;
+        itemRarityEnum = itemSO.itemRarityEnum;
+        equipped = true;
     }
 }

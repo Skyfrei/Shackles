@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c3a34ff75dba554abb6780f2646af4c, type: 3}
+  m_Script: {fileID: 11500000, guid: df0b8ea7f704bd1428524408730553a2, type: 3}
   m_Name: Shield
   m_EditorClassIdentifier: 
-  description: Shields you from incoming damage
-  cooldown: 2
+  cooldown: 0

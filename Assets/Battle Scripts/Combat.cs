@@ -70,8 +70,6 @@ public class Combat : MonoBehaviour
     {
         bool meme1 = player.items[0].itemEffects[0] is IEffect;
 
-        
-        Debug.Log(meme1);
         if (playerTurn == true)
         {   
             if (player.items[0].itemEffects[0] is IEffect effect)
