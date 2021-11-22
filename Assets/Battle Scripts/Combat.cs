@@ -68,11 +68,11 @@ public class Combat : MonoBehaviour
     
     private void BasicAttack()
     {
-        bool meme1 = player.items[0].itemEffects[0] is IEffect;
+        bool meme1 = player.items[0].itemEffects[0] is IPastBattle;
 
         if (playerTurn == true)
         {   
-            if (player.items[0].itemEffects[0] is IEffect effect)
+            if (player.items[0].itemEffects[0] is IPastBattle effect)
             {
                 effect.PastAttack();
             }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName ="effects", menuName = "Lifesteal Effect")]
-public class LifestealScriptableObject : EffectScriptableObject, IEffect
+public class LifestealScriptableObject : EffectScriptableObject, IPastBattle
 {
     private string description;
     public override string Description

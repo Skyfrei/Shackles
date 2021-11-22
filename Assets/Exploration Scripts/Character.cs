@@ -3,7 +3,13 @@ using UnityEngine;
 using Skills;
 using ItemsEquipped;
 
-public class Character : MonoBehaviour, ISkills, IItemsEquipped
+//Changing gear
+public interface IChangeWeapons
+{
+    void ChangeGear();
+}
+
+public class Character : MonoBehaviour, ISkills, IItemsEquipped, IChangeWeapons
 {
     // Start is called before the first frame update
     private Rigidbody2D controller;
@@ -62,11 +68,21 @@ public class Character : MonoBehaviour, ISkills, IItemsEquipped
 
     public void GetEquippedItems()
     {
+        items.Clear();
         items.Add(GameObject.Find("Weapon").GetComponent<Items>());
-        // for (int i = 0; i < 2; i++)
-        // {
-        //     items.Add(GameObject.FindObjectOfType<Items>());
-        // }
+        items.Add(GameObject.Find("Armor").GetComponent<Items>());
+        items.Add(GameObject.Find("Ring").GetComponent<Items>());
+        items.Add(GameObject.Find("Necklace").GetComponent<Items>());
+        items.Add(GameObject.Find("Boots").GetComponent<Items>());
+        items.Add(GameObject.Find("Helmet").GetComponent<Items>());
+    }
+
+    ///<summary>
+    /// Functions allows to change gear during combat.
+    ///</summary>
+    public void ChangeGear()
+    {
+
     }
 
     //Skills
@@ -86,11 +102,4 @@ public class Character : MonoBehaviour, ISkills, IItemsEquipped
     {
 
     }
-
-    // private void OnCollisionStay2D(Collision2D other) {
-    //     if (other.gameObject.name == "Door")
-    //     {
-    //         Debug.Log("asd");
-    //     }
-    // }
 }
