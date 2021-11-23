@@ -7,6 +7,7 @@ public class Items : MonoBehaviour
     public bool equipped;
     public int id;
     public int cost;
+    public bool owned;
     public List<int> components;
     public List<EffectScriptableObject> itemEffects;
     public itemType itemTypeEnum;
@@ -20,15 +21,18 @@ public class Items : MonoBehaviour
 
     void Start()
     {
-        cost = itemSO.cost;
-        description = itemSO.description;
-        artwork = itemSO.artwork;
-        itemName = itemSO.itemName;
-        id = itemSO.id;
-        components = itemSO.components;
-        itemEffects = itemSO.itemEffects;
-        itemTypeEnum = itemSO.itemTypeEnum;
-        itemRarityEnum = itemSO.itemRarityEnum;
-        equipped = true;
+        if (itemSO != null)
+        {
+            cost = itemSO.cost;
+            description = itemSO.description;
+            artwork = itemSO.artwork;
+            itemName = itemSO.itemName;
+            id = itemSO.id;
+            components = itemSO.components;
+            itemEffects = itemSO.itemEffects;
+            itemTypeEnum = itemSO.itemTypeEnum;
+            itemRarityEnum = itemSO.itemRarityEnum;
+            equipped = true;
+        }
     }
 }

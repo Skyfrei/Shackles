@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c86941adc981d564d8f034415c8cf1be, type: 3}
-  m_Name: Robin
+  m_Name: Slayer
   m_EditorClassIdentifier: 
-  name: Robin
-  id: 1
+  name: Slayer
+  id: 2
   sprite: {fileID: 21300000, guid: ec47f75fe8aff1644ac73998f4ad31b5, type: 3}
-  armor: 15
-  maxhealth: 100
+  armor: 5000
+  maxhealth: 10000

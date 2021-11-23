@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df0b8ea7f704bd1428524408730553a2, type: 3}
   m_Name: Shield
   m_EditorClassIdentifier: 
-  cooldown: 0
+  cooldown: 2

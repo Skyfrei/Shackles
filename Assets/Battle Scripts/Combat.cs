@@ -10,7 +10,7 @@ public class Combat : MonoBehaviour
     private Enemy enemy;
     private Character player;
     
-    //Variables
+    // Variables
     private bool playerTurn = true;
 
     //Buttons
@@ -19,6 +19,9 @@ public class Combat : MonoBehaviour
     public Button thirdButton;
     public Button forthButton;
 
+    // Temporary variables that hold the players position before battle
+ 
+
     void Start()
     {
         //Finding objects from previous scene except healthbar which is new
@@ -26,7 +29,8 @@ public class Combat : MonoBehaviour
         player = GameObject.Find("Character").GetComponent<Character>();
         player.GetEquippedItems();
         healthBar = GameObject.Find("Health Bar").GetComponent<HealthBar>();
-        
+
+
         //Button component
         basicAttack = GameObject.Find("Basic Attack").GetComponent<Button>();
         secondButton = GameObject.Find("Second Button").GetComponent<Button>();
@@ -35,13 +39,12 @@ public class Combat : MonoBehaviour
         
         //Linking Health bar with enemy health and repositioning enemy so it looks better on screen
         enemy.currentHealth = enemy.maxHealth;
-        enemy.transform.position = new Vector3(3.7f, 1.3f , 0);
+        
         healthBar.SetMaxHealth(Mathf.RoundToInt(enemy.maxHealth));
     }
 
     private void FixedUpdate()
     {
-
         if (enemy.currentHealth <= 0)
         {
             SceneChanger sc = new SceneChanger();
@@ -63,10 +66,10 @@ public class Combat : MonoBehaviour
 
     private void NextTurn()
     {
-        playerTurn = !playerTurn;
+        playerTurn = playerTurn;
     }
     
-    private void BasicAttack()
+    public void BasicAttack()
     {
         bool meme1 = player.items[0].itemEffects[0] is IPastBattle;
 
