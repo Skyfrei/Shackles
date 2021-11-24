@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 [CreateAssetMenu(fileName = "New Enemy", menuName = "Enemy")]
 public class EnemyScriptableObject : ScriptableObject
@@ -8,6 +9,7 @@ public class EnemyScriptableObject : ScriptableObject
     public Sprite sprite;
     public int armor;
     public float maxhealth;
+    public List<Item> equipped;
 
     public void Print()
     {

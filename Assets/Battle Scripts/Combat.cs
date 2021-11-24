@@ -56,6 +56,9 @@ public class Combat : MonoBehaviour
         manaText.text = "Mana: " + $"{player.Mana}";
         if (enemy.currentHealth <= 0)
         {
+            var droppedItem = enemy.DropItem();
+            player.inventory.Add(droppedItem);
+            Debug.Log($"You have received {droppedItem.itemName} by defeating {enemy.name}");
             SceneChanger sc = new SceneChanger();
             player.player_speed = 5.0f;
             Destroy(enemy.gameObject);
@@ -84,7 +87,7 @@ public class Combat : MonoBehaviour
 
         if (playerTurn == true)
         {   
-            player.items[0].itemEffects[0].BattleEffect();
+            player.equipped[0].itemEffects[0].BattleEffect();
             enemy.TakeDamage(20);
             healthBar.SetHealth(Mathf.RoundToInt(enemy.currentHealth));
             NextTurn();

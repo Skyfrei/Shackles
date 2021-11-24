@@ -23,6 +23,7 @@ public class ItemsScriptableObject : ScriptableObject
     public Sprite artwork;
     public int cost;
     public string itemName;
+    public bool owned;
     public int id;
     public List<int> components;
     public List<EffectScriptableObject> itemEffects; //Could be 0-1-2+

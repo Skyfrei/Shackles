@@ -16,22 +16,22 @@ public class Enemy : MonoBehaviour, IItemsEquipped
     public float maxHealth;
     public float currentHealth;
     public int armor;
+    public List<Item> equipped;
 
     //Items equipped
-    public int ShoesId { get; set; }
     public int HelmetId { get; set; }
     public int WeaponId { get; set; }
     public int RingId { get; set; }
-    public int NecklaceId { get; set; }
     public int ArmorId { get; set; }
 
-    void Start() {
+    void Start() 
+    {
         player = GameObject.FindObjectOfType<Character>();
-
         artwork.sprite = enemySO.sprite;
         id = enemySO.id;
         armor = enemySO.armor;
         maxHealth = enemySO.maxhealth;
+        equipped = enemySO.equipped;
    }
    private void FixedUpdate() {
         Detect();
@@ -60,9 +60,11 @@ public class Enemy : MonoBehaviour, IItemsEquipped
 
     //Item drops from enemies
 
-    public void DropItem(Item item)
+    public Item DropItem()
     {
-        
+        // var 
+
+        return new Item();
     }
     
     private IEnumerator Timer()

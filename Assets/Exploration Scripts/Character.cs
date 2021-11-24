@@ -8,14 +8,14 @@ public class Character : MonoBehaviour, IItemsEquipped
     // Start is called before the first frame update
     private Rigidbody2D controller;
     public float player_speed;
-    public Vector2 Position{get; set;}
+    public Vector2 Position { get; set; }
     public static Character player;
 
     //Stats
-    public float HP{get; set;}
-    public float Armor{get; set;}
-    public float ATK{get; set;}
-    public float Mana{get; set;}
+    public float HP { get; set; }
+    public float Armor { get; set; }
+    public float ATK { get; set; }
+    public float Mana { get; set; }
     // public float CritDamage{get; set;}
     // private float critChance = 10.0f;
     public List<int> enemiesFough;
@@ -23,14 +23,13 @@ public class Character : MonoBehaviour, IItemsEquipped
     ///<summary>
     ///  Character inventory, which also holds which item is equipped.
     ///</summary>
-    public List<Item> items;
+    public List<Item> inventory;
+    public List<Item> equipped;
 
     //Items Equipped
-    public int ShoesId { get; set; }
     public int HelmetId { get; set; }
     public int WeaponId { get; set; }
     public int RingId { get; set; }
-    public int NecklaceId { get; set; }
     public int ArmorId { get; set; }
 
 
@@ -62,11 +61,11 @@ public class Character : MonoBehaviour, IItemsEquipped
 
     public void GetEquippedItems()
     {
-        items.Clear();
-        items.Add(GameObject.Find("Weapon").GetComponent<Item>());
-        items.Add(GameObject.Find("Armor").GetComponent<Item>());
-        items.Add(GameObject.Find("Ring").GetComponent<Item>());
-        items.Add(GameObject.Find("Helmet").GetComponent<Item>());
+        equipped.Clear();
+        equipped.Add(GameObject.Find("Weapon").GetComponent<Item>());
+        equipped.Add(GameObject.Find("Armor").GetComponent<Item>());
+        equipped.Add(GameObject.Find("Ring").GetComponent<Item>());
+        equipped.Add(GameObject.Find("Helmet").GetComponent<Item>());
     }
 
     ///<summary>
