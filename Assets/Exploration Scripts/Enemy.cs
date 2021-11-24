@@ -62,7 +62,11 @@ public class Enemy : MonoBehaviour, IItemsEquipped
 
     public Item DropItem()
     {
-        // var 
+        var randomNumber = Random.Range(0.0f, 1.0f);
+        switch (randomNumber)
+        {
+            
+        }
 
         return new Item();
     }
