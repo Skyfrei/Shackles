@@ -18,5 +18,6 @@ MonoBehaviour:
   itemName: Vendetta
   id: 1
   components: 
-  itemTypeEnum: 5
+  itemEffects: []
+  itemTypeEnum: 0
   itemRarityEnum: 3

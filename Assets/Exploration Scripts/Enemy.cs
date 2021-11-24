@@ -53,9 +53,16 @@ public class Enemy : MonoBehaviour, IItemsEquipped
         }
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
-        this.currentHealth -= damage - 0.25f * this.armor;
+        this.currentHealth -= damage - (0.25f * this.armor);
+    }
+
+    //Item drops from enemies
+
+    public void DropItem(Item item)
+    {
+        
     }
     
     private IEnumerator Timer()

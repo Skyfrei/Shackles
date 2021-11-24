@@ -18,5 +18,6 @@ MonoBehaviour:
   itemName: Dark Matter
   id: 7
   components: 
-  itemTypeEnum: 3
+  itemEffects: []
+  itemTypeEnum: 2
   itemRarityEnum: 0

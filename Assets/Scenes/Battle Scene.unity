@@ -206,9 +206,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 960887111}
-        m_TargetAssemblyTypeName: ButtonClicks, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 960887113}
+        m_TargetAssemblyTypeName: Combat, Assembly-CSharp
+        m_MethodName: Skill3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -508,7 +508,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 894165673}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &320288474
 MonoBehaviour:
@@ -519,7 +519,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 320288472}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 929372c7be9ca6247a58c33fc38e7b53, type: 3}
+  m_Script: {fileID: 11500000, guid: acc3a8dd05b617646952eab67bf6d963, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   equipped: 0
@@ -563,7 +563,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 894165673}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &433340105
 MonoBehaviour:
@@ -574,7 +574,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 433340103}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 929372c7be9ca6247a58c33fc38e7b53, type: 3}
+  m_Script: {fileID: 11500000, guid: acc3a8dd05b617646952eab67bf6d963, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   equipped: 0
@@ -588,7 +588,7 @@ MonoBehaviour:
   itemName: 
   description: 
   artwork: {fileID: 0}
-  itemSO: {fileID: 0}
+  itemSO: {fileID: 11400000, guid: b21b22596cbfbf14983f92e1e03d2da4, type: 2}
 --- !u!1 &576763861
 GameObject:
   m_ObjectHideFlags: 0
@@ -723,61 +723,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 576763861}
   m_CullTransparentMesh: 1
---- !u!1 &688251188
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 688251189}
-  - component: {fileID: 688251190}
-  m_Layer: 0
-  m_Name: Boots
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &688251189
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 688251188}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 894165673}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &688251190
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 688251188}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 929372c7be9ca6247a58c33fc38e7b53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  equipped: 0
-  id: 0
-  cost: 0
-  owned: 0
-  components: 
-  itemEffects: []
-  itemTypeEnum: 0
-  itemRarityEnum: 0
-  itemName: 
-  description: 
-  artwork: {fileID: 0}
-  itemSO: {fileID: 11400000, guid: 3e881c6ec89645d4bab476863139ca01, type: 2}
 --- !u!1 &826576183
 GameObject:
   m_ObjectHideFlags: 0
@@ -886,7 +831,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 894165673}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &836723195
 MonoBehaviour:
@@ -897,7 +842,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 836723193}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 929372c7be9ca6247a58c33fc38e7b53, type: 3}
+  m_Script: {fileID: 11500000, guid: acc3a8dd05b617646952eab67bf6d963, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   equipped: 0
@@ -911,7 +856,7 @@ MonoBehaviour:
   itemName: 
   description: 
   artwork: {fileID: 0}
-  itemSO: {fileID: 0}
+  itemSO: {fileID: 11400000, guid: 66f6f3ff79dbaf643b3c245066daf15d, type: 2}
 --- !u!1 &865014797
 GameObject:
   m_ObjectHideFlags: 0
@@ -1075,7 +1020,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 894165673}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &869264525
 MonoBehaviour:
@@ -1086,7 +1031,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 869264523}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 929372c7be9ca6247a58c33fc38e7b53, type: 3}
+  m_Script: {fileID: 11500000, guid: acc3a8dd05b617646952eab67bf6d963, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   equipped: 0
@@ -1100,7 +1045,7 @@ MonoBehaviour:
   itemName: 
   description: 
   artwork: {fileID: 0}
-  itemSO: {fileID: 0}
+  itemSO: {fileID: 11400000, guid: 3f29cd271a9e08141b7d5b2b7e6329d6, type: 2}
 --- !u!1 &894165672
 GameObject:
   m_ObjectHideFlags: 0
@@ -1128,70 +1073,13 @@ Transform:
   m_LocalPosition: {x: 32.30814, y: -2.560877, z: -662.2293}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 688251189}
   - {fileID: 320288473}
   - {fileID: 433340104}
   - {fileID: 869264524}
-  - {fileID: 934048412}
   - {fileID: 836723194}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &934048411
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 934048412}
-  - component: {fileID: 934048413}
-  m_Layer: 0
-  m_Name: Necklace
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &934048412
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 934048411}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 894165673}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &934048413
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 934048411}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 929372c7be9ca6247a58c33fc38e7b53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  equipped: 0
-  id: 0
-  cost: 0
-  owned: 0
-  components: 
-  itemEffects: []
-  itemTypeEnum: 0
-  itemRarityEnum: 0
-  itemName: 
-  description: 
-  artwork: {fileID: 0}
-  itemSO: {fileID: 0}
 --- !u!1 &960887111
 GameObject:
   m_ObjectHideFlags: 0
@@ -1241,6 +1129,10 @@ MonoBehaviour:
   secondButton: {fileID: 1361740348}
   thirdButton: {fileID: 971872335}
   forthButton: {fileID: 144097917}
+  itemButton: {fileID: 1188442260}
+  runButton: {fileID: 2006570398}
+  healthText: {fileID: 1758634378}
+  manaText: {fileID: 826576185}
 --- !u!114 &960887114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1358,9 +1250,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 960887111}
-        m_TargetAssemblyTypeName: ButtonClicks, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 960887113}
+        m_TargetAssemblyTypeName: Combat, Assembly-CSharp
+        m_MethodName: Skill2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1822,7 +1714,7 @@ GameObject:
   - component: {fileID: 1188442261}
   - component: {fileID: 1188442260}
   m_Layer: 5
-  m_Name: Button (5)
+  m_Name: Items
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1892,13 +1784,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 960887111}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
+      - m_Target: {fileID: 960887113}
+        m_TargetAssemblyTypeName: Combat, Assembly-CSharp
+        m_MethodName: Items
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2025,9 +1917,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 960887111}
-        m_TargetAssemblyTypeName: ButtonClicks, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 960887113}
+        m_TargetAssemblyTypeName: Combat, Assembly-CSharp
+        m_MethodName: Skill1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2132,7 +2024,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Skill 1
+  m_text: Skill 3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2450,7 +2342,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Skill 1
+  m_text: Skill 2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2981,7 +2873,7 @@ GameObject:
   - component: {fileID: 2006570399}
   - component: {fileID: 2006570398}
   m_Layer: 5
-  m_Name: Button (6)
+  m_Name: Run
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3051,13 +2943,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 960887111}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
+      - m_Target: {fileID: 960887113}
+        m_TargetAssemblyTypeName: Combat, Assembly-CSharp
+        m_MethodName: Run
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

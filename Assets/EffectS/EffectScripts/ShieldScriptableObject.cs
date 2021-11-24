@@ -20,8 +20,9 @@ public class ShieldScriptableObject : EffectScriptableObject
         }
     }
 
-    public void PreAttack()
-    {
-
+    public override void BattleEffect()
+    {   
+        Debug.Log("meme");
     }
+    public override void NonBattleEffect(){}
 }

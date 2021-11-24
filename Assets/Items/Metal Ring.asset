@@ -18,5 +18,6 @@ MonoBehaviour:
   itemName: Metal Ring
   id: 4
   components: 
-  itemTypeEnum: 2
+  itemEffects: []
+  itemTypeEnum: 3
   itemRarityEnum: 0

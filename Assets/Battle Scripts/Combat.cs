@@ -13,11 +13,15 @@ public class Combat : MonoBehaviour
     // Variables
     private bool playerTurn = true;
 
-    //Buttons
+    //UI
     public Button basicAttack;
     public Button secondButton;
     public Button thirdButton;
     public Button forthButton;
+    public Button itemButton;
+    public Button runButton;
+    public Text healthText;
+    public Text manaText;
 
     // Temporary variables that hold the players position before battle
  
@@ -36,15 +40,20 @@ public class Combat : MonoBehaviour
         secondButton = GameObject.Find("Second Button").GetComponent<Button>();
         thirdButton = GameObject.Find("Third Button").GetComponent<Button>();
         forthButton = GameObject.Find("Forth Button").GetComponent<Button>();
+        itemButton = GameObject.Find("Items").GetComponent<Button>();
+        runButton = GameObject.Find("Run").GetComponent<Button>();
+        healthText = GameObject.Find("Hp").GetComponent<Text>();
+        manaText = GameObject.Find("Mana").GetComponent<Text>();
         
         //Linking Health bar with enemy health and repositioning enemy so it looks better on screen
         enemy.currentHealth = enemy.maxHealth;
-        
         healthBar.SetMaxHealth(Mathf.RoundToInt(enemy.maxHealth));
     }
 
     private void FixedUpdate()
     {
+        healthText.text = "Health: " + $"{player.HP}";
+        manaText.text = "Mana: " + $"{player.Mana}";
         if (enemy.currentHealth <= 0)
         {
             SceneChanger sc = new SceneChanger();
@@ -66,25 +75,44 @@ public class Combat : MonoBehaviour
 
     private void NextTurn()
     {
-        playerTurn = playerTurn;
+        playerTurn = !playerTurn;
     }
     
     public void BasicAttack()
     {
-        bool meme1 = player.items[0].itemEffects[0] is IPastBattle;
+        // bool meme1 = player.items[0].itemEffects[0] is IBattleEffect;
 
         if (playerTurn == true)
         {   
-            if (player.items[0].itemEffects[0] is IPastBattle effect)
-            {
-                effect.PastAttack();
-            }
+            player.items[0].itemEffects[0].BattleEffect();
             enemy.TakeDamage(20);
             healthBar.SetHealth(Mathf.RoundToInt(enemy.currentHealth));
             NextTurn();
         }
     }
 
+    public void Skill1()
+    {
+
+    }
+    public void Skill2()
+    {
+
+    }
+    public void Skill3()
+    {
+
+    }
     
+    // Secondary buttons 
+    // Items and the run option during fights
+    public void Items()
+    {
+
+    }
+    public void Run()
+    {
+
+    }
     
 }

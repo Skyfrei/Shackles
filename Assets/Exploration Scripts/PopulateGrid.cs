@@ -11,14 +11,8 @@ public class PopulateGrid : MonoBehaviour
 
     void Start()
     {
-        numberToCreate = 100;
+        numberToCreate = 50;
         Populate();    
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     void Populate(){
@@ -27,6 +21,7 @@ public class PopulateGrid : MonoBehaviour
         {
             newOjb = (GameObject)Instantiate(prefab, transform);
             newOjb.GetComponent<Image>().color = Random.ColorHSV();
+            //newOjb.GetComponent<Item>().artwork = Random.ColorHSV();
         }
     }
 }

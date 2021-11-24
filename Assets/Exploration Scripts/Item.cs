@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Items : MonoBehaviour
+public class Item : MonoBehaviour
 {
     public bool equipped;
     public int id;
@@ -16,7 +16,7 @@ public class Items : MonoBehaviour
     public string itemName;
     public string description;
     [SerializeField]
-    private Sprite artwork;
+    public Sprite artwork;
     public ItemsScriptableObject itemSO;
 
     void Start()

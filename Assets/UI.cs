@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class UI : MonoBehaviour
 {
     private Canvas canvas;
-    private bool isShowing;
 
     private void Start() {
         canvas = GetComponent<Canvas>();

@@ -20,5 +20,6 @@ MonoBehaviour:
   itemName: Jewel of the Crown
   id: 2
   components: 
+  itemEffects: []
   itemTypeEnum: 3
   itemRarityEnum: 3

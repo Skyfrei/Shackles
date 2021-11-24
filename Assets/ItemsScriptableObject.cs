@@ -5,10 +5,8 @@ public enum itemType
 {
     Weapon,
     Armor,
-    Ring,
-    Necklace,
-    Shoes,
-    Helmet
+    Helmet,
+    Ring
 }
 public enum itemRarity
 {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName ="effects", menuName = "Lifesteal Effect")]
-public class LifestealScriptableObject : EffectScriptableObject, IPastBattle
+public class LifestealScriptableObject : EffectScriptableObject
 {
     private string description;
     public override string Description
@@ -18,8 +18,9 @@ public class LifestealScriptableObject : EffectScriptableObject, IPastBattle
         }
     }
     
-    public void PastAttack()
+    public override void BattleEffect()
     {   
         Debug.Log("meme");
     }
+    public override void NonBattleEffect(){}
 }

@@ -7,8 +7,9 @@ public class AttackScriptableObject : EffectScriptableObject
 {
     public string description;
 
-    public void PreAttack()
-    {
-
+    public override void BattleEffect()
+    {   
+        Debug.Log("meme");
     }
+    public override void NonBattleEffect(){}
 }

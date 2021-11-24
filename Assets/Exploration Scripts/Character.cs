@@ -3,13 +3,7 @@ using UnityEngine;
 using Skills;
 using ItemsEquipped;
 
-//Changing gear
-public interface IChangeWeapons
-{
-    void ChangeGear();
-}
-
-public class Character : MonoBehaviour, ISkills, IItemsEquipped, IChangeWeapons
+public class Character : MonoBehaviour, IItemsEquipped
 {
     // Start is called before the first frame update
     private Rigidbody2D controller;
@@ -29,7 +23,7 @@ public class Character : MonoBehaviour, ISkills, IItemsEquipped, IChangeWeapons
     ///<summary>
     ///  Character inventory, which also holds which item is equipped.
     ///</summary>
-    public List<Items> items;
+    public List<Item> items;
 
     //Items Equipped
     public int ShoesId { get; set; }
@@ -69,12 +63,10 @@ public class Character : MonoBehaviour, ISkills, IItemsEquipped, IChangeWeapons
     public void GetEquippedItems()
     {
         items.Clear();
-        items.Add(GameObject.Find("Weapon").GetComponent<Items>());
-        items.Add(GameObject.Find("Armor").GetComponent<Items>());
-        items.Add(GameObject.Find("Ring").GetComponent<Items>());
-        items.Add(GameObject.Find("Necklace").GetComponent<Items>());
-        items.Add(GameObject.Find("Boots").GetComponent<Items>());
-        items.Add(GameObject.Find("Helmet").GetComponent<Items>());
+        items.Add(GameObject.Find("Weapon").GetComponent<Item>());
+        items.Add(GameObject.Find("Armor").GetComponent<Item>());
+        items.Add(GameObject.Find("Ring").GetComponent<Item>());
+        items.Add(GameObject.Find("Helmet").GetComponent<Item>());
     }
 
     ///<summary>
@@ -84,22 +76,26 @@ public class Character : MonoBehaviour, ISkills, IItemsEquipped, IChangeWeapons
     {
 
     }
-
     //Skills
-    public void Skill1()
+    public float BasicAttack()
     {
         
+
+        return 0.0f;
     }
-    public void Skill2()
+    public float Skill2()
     {
 
+        return 0.0f;
     }
-    public void Skill3()
+    public float Skill3()
     {
 
+        return 0.0f;
     }
-    public void Skill4()
+    public float Skill4()
     {
 
+        return 0.0f;
     }
 }
