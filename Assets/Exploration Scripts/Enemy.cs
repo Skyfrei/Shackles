@@ -61,13 +61,48 @@ public class Enemy : MonoBehaviour, IItemsEquipped
     //Item drops from enemies
 
     public Item DropItem()
-    {
+    { 
         var randomNumber = Random.Range(0.0f, 1.0f);
-        switch (randomNumber)
+        if (randomNumber > 0.99f)
         {
-            
+            foreach (Item item in this.equipped)
+            {
+                if (item.ItemRarity == ItemRarity.Legendary)
+                {
+                    return item;
+                }
+            }
         }
-
+        else if (randomNumber > 0.9f && randomNumber <= 0.99f)
+        {
+          foreach (Item item in this.equipped)
+            {
+                if (item.ItemRarity == ItemRarity.Epic)
+                {
+                    return item;
+                }
+            }  
+        }
+        else if (randomNumber > 0.7f & randomNumber <= 0.9f)
+        {
+            foreach (Item item in this.equipped)
+            {
+                if (item.ItemRarity == ItemRarity.Rare)
+                {
+                    return item;
+                }
+            }
+        }
+        else if (randomNumber > 0.5f && randomNumber <= 0.7f)
+        {
+           foreach (Item item in this.equipped)
+            {
+                if (item.ItemRarity == ItemRarity.Common)
+                {
+                    return item;
+                }
+            } 
+        }
         return new Item();
     }
     

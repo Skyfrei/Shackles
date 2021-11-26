@@ -10,8 +10,8 @@ public class Item : MonoBehaviour
     public bool owned;
     public List<int> components;
     public List<EffectScriptableObject> itemEffects;
-    public itemType itemType;
-    public itemRarity itemRarity;
+    public ItemType ItemType;
+    public ItemRarity ItemRarity;
 
     public string itemName;
     public string description;
@@ -30,8 +30,8 @@ public class Item : MonoBehaviour
             id = itemSO.id;
             components = itemSO.components;
             itemEffects = itemSO.itemEffects;
-            itemType = itemSO.itemTypeEnum;
-            itemRarity = itemSO.itemRarityEnum;
+            ItemType = itemSO.itemTypeEnum;
+            ItemRarity = itemSO.itemRarityEnum;
             equipped = true;
             owned = itemSO.owned;
         }

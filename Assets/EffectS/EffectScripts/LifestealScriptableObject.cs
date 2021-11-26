@@ -22,5 +22,5 @@ public class LifestealScriptableObject : EffectScriptableObject
     {   
         Debug.Log("meme");
     }
-    public override void NonBattleEffect(){}
+    public override void NonBattleEffect(Character player){}
 }

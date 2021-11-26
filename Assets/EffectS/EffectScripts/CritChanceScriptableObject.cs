@@ -11,5 +11,5 @@ public class CritChanceScriptableObject : EffectScriptableObject
     {   
         Debug.Log("meme");
     }
-    public override void NonBattleEffect(){}
+    public override void NonBattleEffect(Character player){}
 }
