@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour, IItemsEquipped
     public float maxHealth;
     public float currentHealth;
     public int armor;
+    public List<ItemsScriptableObject> equippedSO;
     public List<Item> equipped;
 
     //Items equipped
@@ -31,10 +32,19 @@ public class Enemy : MonoBehaviour, IItemsEquipped
         id = enemySO.id;
         armor = enemySO.armor;
         maxHealth = enemySO.maxhealth;
-        equipped = enemySO.equipped;
+        equippedSO = enemySO.equipped;
+        foreach (ItemsScriptableObject itemSo in equippedSO)
+        {
+            Item item = new Item();
+            item.Init(itemSo);
+            equipped.Add(item);
+        }
+        
    }
    private void FixedUpdate() {
         Detect();
+        
+ 
     }
 
     private void Detect()
@@ -62,48 +72,48 @@ public class Enemy : MonoBehaviour, IItemsEquipped
 
     public Item DropItem()
     { 
-        var randomNumber = Random.Range(0.0f, 1.0f);
-        if (randomNumber > 0.99f)
-        {
-            foreach (Item item in this.equipped)
-            {
-                if (item.ItemRarity == ItemRarity.Legendary)
-                {
-                    return item;
-                }
-            }
-        }
-        else if (randomNumber > 0.9f && randomNumber <= 0.99f)
-        {
-          foreach (Item item in this.equipped)
-            {
-                if (item.ItemRarity == ItemRarity.Epic)
-                {
-                    return item;
-                }
-            }  
-        }
-        else if (randomNumber > 0.7f & randomNumber <= 0.9f)
-        {
-            foreach (Item item in this.equipped)
-            {
-                if (item.ItemRarity == ItemRarity.Rare)
-                {
-                    return item;
-                }
-            }
-        }
-        else if (randomNumber > 0.5f && randomNumber <= 0.7f)
-        {
-           foreach (Item item in this.equipped)
-            {
-                if (item.ItemRarity == ItemRarity.Common)
-                {
-                    return item;
-                }
-            } 
-        }
-        return new Item();
+        // var randomNumber = Random.Range(0.0f, 1.0f);
+        // if (randomNumber == 0.99f)
+        // {
+        //     foreach (Item item in this.equipped)
+        //     {
+        //         if (item.ItemRarity == ItemRarity.Legendary)
+        //         {
+        //             return item;
+        //         }
+        //     }
+        // }
+        // else if (randomNumber > 0.9f && randomNumber <= 0.99f)
+        // {
+        //   foreach (Item item in this.equipped)
+        //     {
+        //         if (item.ItemRarity == ItemRarity.Epic)
+        //         {
+        //             return item;
+        //         }
+        //     }  
+        // }
+        // else if (randomNumber > 0.7f && randomNumber <= 0.9f)
+        // {
+        //     foreach (Item item in this.equipped)
+        //     {
+        //         if (item.ItemRarity == ItemRarity.Rare)
+        //         {
+        //             return item;
+        //         }
+        //     }
+        // }
+        // else if (randomNumber > 0.5f && randomNumber <= 0.7f)
+        // {
+        //    foreach (Item item in this.equipped)
+        //     {
+        //         if (item.ItemRarity == ItemRarity.Common)
+        //         {
+        //             return item;
+        //         }
+        //     } 
+        // }
+        return equipped[equipped.Count - 1];
     }
     
     private IEnumerator Timer()

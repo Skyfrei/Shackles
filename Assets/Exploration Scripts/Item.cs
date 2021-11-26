@@ -36,4 +36,21 @@ public class Item : MonoBehaviour
             owned = itemSO.owned;
         }
     }
+    public void Init(ItemsScriptableObject itemSo)
+    {
+        if (itemSo != null)
+        {
+            this.cost = itemSo.cost;
+            this.description = itemSo.description;
+            this.artwork = itemSo.artwork;
+            this.itemName = itemSo.itemName;
+            this.id = itemSo.id;
+            this.components = itemSo.components;
+            this.itemEffects = itemSo.itemEffects;
+            this.ItemType = itemSo.itemTypeEnum;
+            this.ItemRarity = itemSo.itemRarityEnum;
+            this.equipped = true;
+            this.owned = itemSo.owned;
+        }
+    }
 }

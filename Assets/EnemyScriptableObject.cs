@@ -9,7 +9,7 @@ public class EnemyScriptableObject : ScriptableObject
     public Sprite sprite;
     public int armor;
     public float maxhealth;
-    public List<Item> equipped;
+    public List<ItemsScriptableObject> equipped;
 
     public void Print()
     {

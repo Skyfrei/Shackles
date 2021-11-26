@@ -3,7 +3,10 @@ guid: 8c5210a72e7eb9944a03fb392044cc71
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - enemySO: {instanceID: 0}
+  - artwork: {instanceID: 0}
+  - healthPot: {fileID: 11400000, guid: 6bd18e546e983cd46bfa58fd72778a77, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

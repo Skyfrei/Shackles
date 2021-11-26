@@ -56,7 +56,7 @@ public class Combat : MonoBehaviour
         manaText.text = "Mana: " + $"{player.Mana}";
         if (enemy.currentHealth <= 0)
         {
-            var droppedItem = enemy.DropItem();
+            Item droppedItem = enemy.DropItem();
             player.inventory.Add(droppedItem);
             Debug.Log($"You have received {droppedItem.itemName} by defeating {enemy.name}");
             SceneChanger sc = new SceneChanger();
@@ -78,7 +78,7 @@ public class Combat : MonoBehaviour
 
     private void NextTurn()
     {
-        playerTurn = !playerTurn;
+        playerTurn = playerTurn;
     }
     
     public void BasicAttack()
