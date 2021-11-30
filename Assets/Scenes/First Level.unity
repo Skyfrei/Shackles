@@ -4499,6 +4499,8 @@ MonoBehaviour:
   maxHealth: 0
   currentHealth: 0
   armor: 0
+  equippedSO: []
+  equipped: []
 --- !u!1 &225764457
 GameObject:
   m_ObjectHideFlags: 0
@@ -5135,7 +5137,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player_speed: 5
   enemiesFough: 
-  items: []
+  inventory: []
+  equipped: []
 --- !u!50 &260799685
 Rigidbody2D:
   serializedVersion: 4
@@ -6007,6 +6010,8 @@ MonoBehaviour:
   maxHealth: 0
   currentHealth: 0
   armor: 0
+  equippedSO: []
+  equipped: []
 --- !u!50 &296643279
 Rigidbody2D:
   serializedVersion: 4
@@ -12372,6 +12377,8 @@ MonoBehaviour:
   maxHealth: 0
   currentHealth: 0
   armor: 0
+  equippedSO: []
+  equipped: []
 --- !u!50 &689508963
 Rigidbody2D:
   serializedVersion: 4
@@ -12527,6 +12534,8 @@ MonoBehaviour:
   maxHealth: 0
   currentHealth: 0
   armor: 0
+  equippedSO: []
+  equipped: []
 --- !u!50 &705825930
 Rigidbody2D:
   serializedVersion: 4
@@ -29141,6 +29150,8 @@ MonoBehaviour:
   maxHealth: 0
   currentHealth: 0
   armor: 0
+  equippedSO: []
+  equipped: []
 --- !u!50 &1714924656
 Rigidbody2D:
   serializedVersion: 4
@@ -94201,7 +94212,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1171.2395, y: 637.3027}
+  m_AnchoredPosition: {x: -22969.283, y: 16650.973}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2145574861

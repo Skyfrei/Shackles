@@ -35,9 +35,7 @@ public class Enemy : MonoBehaviour, IItemsEquipped
         equippedSO = enemySO.equipped;
         foreach (ItemsScriptableObject itemSo in equippedSO)
         {
-            Item item = new Item();
-            item.Init(itemSo);
-            equipped.Add(item);
+            equipped.Add(new Item(itemSo));
         }
         
    }

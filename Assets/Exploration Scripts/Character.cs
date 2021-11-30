@@ -61,11 +61,7 @@ public class Character : MonoBehaviour, IItemsEquipped
 
     public void GetEquippedItems()
     {
-        equipped.Clear();
-        equipped.Add(GameObject.Find("Weapon").GetComponent<Item>());
-        equipped.Add(GameObject.Find("Armor").GetComponent<Item>());
-        equipped.Add(GameObject.Find("Ring").GetComponent<Item>());
-        equipped.Add(GameObject.Find("Helmet").GetComponent<Item>());
+        
     }
 
     ///<summary>

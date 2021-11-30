@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Item : MonoBehaviour
+[System.Serializable]
+public class Item
 {
     public bool equipped;
     public int id;
@@ -36,7 +37,7 @@ public class Item : MonoBehaviour
             owned = itemSO.owned;
         }
     }
-    public void Init(ItemsScriptableObject itemSo)
+    public Item(ItemsScriptableObject itemSo)
     {
         if (itemSo != null)
         {
