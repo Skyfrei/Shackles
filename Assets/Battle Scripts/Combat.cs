@@ -105,7 +105,6 @@ public class Combat : MonoBehaviour
         {   
             // player.equipped[0].itemEffects[0].BattleEffect();
             player.Skill2();
-            healthBar.SetHealth(Mathf.RoundToInt(enemy.currentHealth));
             NextTurn();
         }
         else
@@ -116,11 +115,32 @@ public class Combat : MonoBehaviour
     }
     public void Skill3()
     {
-
+        if (playerTurn == true)
+        {   
+            // player.equipped[0].itemEffects[0].BattleEffect();
+            player.Skill3();
+            NextTurn();
+        }
+        else
+        {
+            enemy.Turn();
+            NextTurn(); 
+        }
     }
     public void Skill4()
     {
-
+        if (playerTurn == true)
+        {   
+            // player.equipped[0].itemEffects[0].BattleEffect();
+            player.Skill4();
+            healthBar.SetHealth(Mathf.RoundToInt(enemy.currentHealth));
+            NextTurn();
+        }
+        else
+        {
+            enemy.Turn();
+            NextTurn(); 
+        }
     }
     ///<summary>
     /// <para>Secondary Button.</para>

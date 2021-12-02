@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour, IItemsEquipped
     private Character player;
     public float maxHealth;
     public float currentHealth;
+    public float mana;
     public int armor;
     public byte level;
     public List<ItemsScriptableObject> equippedSO;
@@ -31,6 +32,7 @@ public class Enemy : MonoBehaviour, IItemsEquipped
         player = GameObject.FindObjectOfType<Character>();
         artwork.sprite = enemySO.sprite;
         id = enemySO.id;
+        mana = enemySO.mana;
         armor = enemySO.armor;
         level = enemySO.level;
         maxHealth = enemySO.maxhealth;
@@ -75,24 +77,26 @@ public class Enemy : MonoBehaviour, IItemsEquipped
 
     public void Turn()
     {
-        int randomNumber = Random.Range(0, 4);
-        switch (randomNumber)
+        float randomNumber = Random.Range(0.0f, 1.0f);
+        if (randomNumber <= 0.75)
         {
-            case 1: 
-                BasicAttack();
-                break;
-            case 2:
-                Skill2();
-                break;
-            case 3:
-                Skill3();
-                break;
-            case 4: 
-                Skill4();
-                break;       
+            BasicAttack();
         }
+        else if (randomNumber > 0.75 && randomNumber <= 0.8)
+        {
+            Skill2();
+        }
+        else if (randomNumber > 0.8 && randomNumber <= 0.85)
+        {
+            Skill3();
+        }
+        else
+        {
+            Skill4();
+        }
+
+
     }
-    
     private void BasicAttack()
     {
 

@@ -10,6 +10,7 @@ public class EnemyScriptableObject : ScriptableObject
     public int armor;
     public float maxhealth;
     public byte level;
+    public float mana;
     public List<ItemsScriptableObject> equipped;
 
     public void Print()
