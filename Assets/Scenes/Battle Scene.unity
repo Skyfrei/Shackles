@@ -208,7 +208,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 960887113}
         m_TargetAssemblyTypeName: Combat, Assembly-CSharp
-        m_MethodName: Skill3
+        m_MethodName: Skill4
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -447,7 +447,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &311865903
@@ -478,6 +478,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player_speed: 2.4
   enemiesFough: 
+  inventory: []
+  equipped: []
 --- !u!1 &576763861
 GameObject:
   m_ObjectHideFlags: 0
@@ -997,7 +999,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 960887113}
         m_TargetAssemblyTypeName: Combat, Assembly-CSharp
-        m_MethodName: Skill2
+        m_MethodName: Skill3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1664,7 +1666,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 960887113}
         m_TargetAssemblyTypeName: Combat, Assembly-CSharp
-        m_MethodName: Skill1
+        m_MethodName: Skill2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

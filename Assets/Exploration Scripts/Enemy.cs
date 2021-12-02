@@ -92,10 +92,10 @@ public class Enemy : MonoBehaviour, IItemsEquipped
                 break;       
         }
     }
-
+    
     private void BasicAttack()
     {
-        
+
     }
     private void Skill2()
     {
@@ -110,10 +110,7 @@ public class Enemy : MonoBehaviour, IItemsEquipped
 
     }
 
-    
-
     //Item drops from enemies
-
     public Item DropItem()
     { 
         if (equipped.Count >= 1)

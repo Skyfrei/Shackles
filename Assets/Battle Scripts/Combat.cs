@@ -99,16 +99,26 @@ public class Combat : MonoBehaviour
             NextTurn(); 
         }
     }
-
-    public void Skill1()
-    {
-
-    }
     public void Skill2()
     {
-
+        if (playerTurn == true)
+        {   
+            // player.equipped[0].itemEffects[0].BattleEffect();
+            player.Skill2();
+            healthBar.SetHealth(Mathf.RoundToInt(enemy.currentHealth));
+            NextTurn();
+        }
+        else
+        {
+            enemy.Turn();
+            NextTurn(); 
+        }
     }
     public void Skill3()
+    {
+
+    }
+    public void Skill4()
     {
 
     }
