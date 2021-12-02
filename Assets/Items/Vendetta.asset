@@ -14,8 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: The user suffers from constant evergrowing hatred.
   artwork: {fileID: 0}
+  attack: 65
+  defense: 0
+  critChance: 0.15
+  health: 0
   cost: 2700
   itemName: Vendetta
+  owned: 0
   id: 1
   components: 
   itemEffects: []

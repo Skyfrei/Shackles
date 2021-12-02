@@ -5,7 +5,6 @@ using UnityEngine;
 [System.Serializable]
 public class Item
 {
-    public bool equipped;
     public int id;
     public int cost;
     public bool owned;
@@ -33,7 +32,6 @@ public class Item
             itemEffects = itemSO.itemEffects;
             ItemType = itemSO.itemTypeEnum;
             ItemRarity = itemSO.itemRarityEnum;
-            equipped = true;
             owned = itemSO.owned;
         }
     }
@@ -50,7 +48,6 @@ public class Item
             this.itemEffects = itemSo.itemEffects;
             this.ItemType = itemSo.itemTypeEnum;
             this.ItemRarity = itemSo.itemRarityEnum;
-            this.equipped = true;
             this.owned = itemSo.owned;
         }
     }

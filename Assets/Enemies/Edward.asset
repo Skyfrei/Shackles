@@ -17,6 +17,7 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: ec47f75fe8aff1644ac73998f4ad31b5, type: 3}
   armor: 20
   maxhealth: 100
+  level: 1
   equipped:
   - {fileID: 11400000, guid: 122d06594741a1e4ab2ab93f70634107, type: 2}
   - {fileID: 11400000, guid: a29028c12b6a24a4ba88d7d692d1927f, type: 2}

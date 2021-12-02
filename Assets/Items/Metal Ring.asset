@@ -14,8 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: A dulled metal ring
   artwork: {fileID: 0}
+  attack: 15
+  defense: 10
+  critChance: 0.05
+  health: 50
   cost: 400
   itemName: Metal Ring
+  owned: 0
   id: 4
   components: 
   itemEffects: []

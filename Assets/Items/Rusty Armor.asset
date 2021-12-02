@@ -10,20 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c183df88e2fe1b043aa33bdb75d29879, type: 3}
-  m_Name: Gravity Lens
+  m_Name: Rusty Armor
   m_EditorClassIdentifier: 
-  description: 'A necklece hidde from the treasure hunters in the Catacombos dungeon.
-    Even the astrals were forced to bow before it. '
+  description: Scuffed Boots
   artwork: {fileID: 0}
-  attack: 25
-  defense: 25
-  critChance: 0.15
-  health: 250
-  cost: 3000
-  itemName: Gravity Lens
+  attack: 0
+  defense: 10
+  critChance: 0
+  health: 100
+  cost: 0
+  itemName: 
   owned: 0
-  id: 5
-  components: 07000000
+  id: 9
+  components: 
   itemEffects: []
-  itemTypeEnum: 3
-  itemRarityEnum: 3
+  itemTypeEnum: 0
+  itemRarityEnum: 0

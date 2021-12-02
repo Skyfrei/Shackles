@@ -16,8 +16,13 @@ MonoBehaviour:
     as such the Jewel is cursed and he who dares  touch it will leave not even his
     rotting bones behind.
   artwork: {fileID: 0}
+  attack: 50
+  defense: 0
+  critChance: 0.25
+  health: 100
   cost: 2900
   itemName: Jewel of the Crown
+  owned: 0
   id: 2
   components: 
   itemEffects: []

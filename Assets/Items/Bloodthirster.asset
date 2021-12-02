@@ -14,8 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: Makes the user bloodlusty.
   artwork: {fileID: 0}
+  attack: 70
+  defense: 0
+  critChance: 0.25
+  health: 0
   cost: 3200
   itemName: BloodThirster
+  owned: 0
   id: 0
   components: 
   itemEffects:

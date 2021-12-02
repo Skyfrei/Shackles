@@ -16,6 +16,8 @@ public class Character : MonoBehaviour, IItemsEquipped
     public float Armor { get; set; }
     public float ATK { get; set; }
     public float Mana { get; set; }
+    public float CritChance { get; set; }
+    public int Gold { get; set; }
     // public float CritDamage{get; set;}
     // private float critChance = 10.0f;
     public List<int> enemiesFough;
@@ -31,15 +33,19 @@ public class Character : MonoBehaviour, IItemsEquipped
     public int WeaponId { get; set; }
     public int RingId { get; set; }
     public int ArmorId { get; set; }
+    public byte Level { get; set; }
 
 
     void Start()
     {   
         controller = GetComponent<Rigidbody2D>();
+        Gold = 300;
+        Level = 1;
         HP = 150;
         Armor = 100;
         ATK = 100;
         Mana = 100;
+        CritChance = 0.15f;
     }
 
     private void Awake() {
@@ -58,11 +64,39 @@ public class Character : MonoBehaviour, IItemsEquipped
         controller.position += move * Time.deltaTime * player_speed;
         Position = controller.position;
     }
+    ///<summary>
+    /// Getting items from inventory scriptable object list to inventory. Converts item scriptable object into item.
+    ///</summary>
+    
+    public void AddToInventory(ItemsScriptableObject itemSo)
+    {
+        inventory.Add(new Item(itemSo));
+    }
+    
+    public void AddToInventory(Item item)
+    {
+        inventory.Add(item);
+    }
 
+
+    ///<summary>
+    /// Get currently equipped gear.
+    ///</summary>
     public void GetEquippedItems()
     {
         
     }
+
+    public void EquipItem()
+    {
+
+    }
+
+    public void UnequippItem()
+    {
+
+    }
+
 
     ///<summary>
     /// Functions allows to change gear during combat.
@@ -71,26 +105,80 @@ public class Character : MonoBehaviour, IItemsEquipped
     {
 
     }
+
+    ///<summary>
+    /// Changes player stats whenever player changes equipped gear. 
+    ///</summary>
+    public void ChangeStats()
+    {
+        
+    }
+
     //Skills
     public float BasicAttack()
     {
-        
+        var randomNumber = Random.Range(0.0f, 1.0f);
+        bool criticalStruck = false;
 
-        return 0.0f;
+        foreach(Item item in equipped)
+            {
+                if (item.ItemType == ItemType.Weapon)
+                {
+                    item.itemEffects[0].BattleEffect();
+                }
+            }
+
+        if (criticalStruck = randomNumber <= CritChance ? true : false == true)
+        {
+            return ATK + (ATK * 0.5f);
+        }
+        return ATK;
     }
-    public float Skill2()
+
+    public void Skill2()
     {
-
-        return 0.0f;
+        foreach(Item item in equipped)
+            {
+                if (item.ItemType == ItemType.Helmet)
+                {
+                    item.itemEffects[0].NonBattleEffect(this);
+                }
+            }
     }
-    public float Skill3()
+
+    public void Skill3()
     {
-
-        return 0.0f;
+        foreach(Item item in equipped)
+            {
+                if (item.ItemType == ItemType.Armor)
+                {
+                    item.itemEffects[0].NonBattleEffect(this);
+                }
+            }
     }
+
     public float Skill4()
     {
-
+        foreach(Item item in equipped)
+        {
+            if (item.ItemType == ItemType.Ring)
+            {
+                foreach(EffectScriptableObject effect in item.itemEffects)
+                {
+                    effect.BattleEffect();
+                    effect.NonBattleEffect(this);
+                }
+            }
+        }        
         return 0.0f;
+    }
+
+    public void LevelUp()
+    {
+        this.Level++;
+        this.HP += 100;
+        this.Armor += 15;
+        this.ATK += 15;
+        this.Mana += 10;
     }
 }

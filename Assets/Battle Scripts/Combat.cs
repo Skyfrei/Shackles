@@ -48,6 +48,7 @@ public class Combat : MonoBehaviour
         //Linking Health bar with enemy health and repositioning enemy so it looks better on screen
         enemy.currentHealth = enemy.maxHealth;
         healthBar.SetMaxHealth(Mathf.RoundToInt(enemy.maxHealth));
+
     }
 
     private void FixedUpdate()
@@ -87,8 +88,9 @@ public class Combat : MonoBehaviour
 
         if (playerTurn == true)
         {   
-            player.equipped[0].itemEffects[0].BattleEffect();
-            enemy.TakeDamage(20);
+            // player.equipped[0].itemEffects[0].BattleEffect();
+            float damage = player.BasicAttack();
+            enemy.TakeDamage(damage);
             healthBar.SetHealth(Mathf.RoundToInt(enemy.currentHealth));
             NextTurn();
         }
@@ -106,13 +108,18 @@ public class Combat : MonoBehaviour
     {
 
     }
-    
-    // Secondary buttons 
-    // Items and the run option during fights
+    ///<summary>
+    /// <para>Secondary Button.</para>
+    /// <para>Opens Item menu when clicked.</para>
+    ///</summary>
     public void Items()
     {
 
     }
+    ///<summary>
+    /// <para>Secondary Button.</para>
+    /// <para>Player tries to run when clicked.</para>
+    ///</summary>
     public void Run()
     {
 

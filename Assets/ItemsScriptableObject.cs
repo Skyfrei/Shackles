@@ -22,6 +22,10 @@ public class ItemsScriptableObject : ScriptableObject
 {
     public string description;
     public Sprite artwork;
+    public int attack;
+    public int defense;
+    public float critChance;
+    public int health;
     public int cost;
     public string itemName;
     public bool owned;
