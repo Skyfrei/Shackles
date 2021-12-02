@@ -6,6 +6,14 @@ Shackles a Role Playing Game (RPG) with a battle system and an interesting story
 Shackles has integrated all RPG characteristics such as an inventory that is connected with a database, skills according to the items the player is equipping, and lots of fights.
 The game will be an exploration game where every single dialogue will be important to the story and an asset to the player. As dialogues can bring side quests and lots of rewards.
 
+ # **Working on:**
+ 
+   ・Better combat system.
+  
+   ・Need a lore, currently the game doesn't really have a lore.
+  
+   ・Music needed.
+
  # **Shackle's current systems:**
  
    ・Item system is implemented. Both enemies and players can have equipped items which grant combat effects. 
