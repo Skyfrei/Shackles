@@ -73,6 +73,45 @@ public class Enemy : MonoBehaviour, IItemsEquipped
         }
     }
 
+    public void Turn()
+    {
+        int randomNumber = Random.Range(0, 4);
+        switch (randomNumber)
+        {
+            case 1: 
+                BasicAttack();
+                break;
+            case 2:
+                Skill2();
+                break;
+            case 3:
+                Skill3();
+                break;
+            case 4: 
+                Skill4();
+                break;       
+        }
+    }
+
+    private void BasicAttack()
+    {
+        
+    }
+    private void Skill2()
+    {
+
+    }
+    private void Skill3()
+    {
+
+    }
+    private void Skill4()
+    {
+
+    }
+
+    
+
     //Item drops from enemies
 
     public Item DropItem()

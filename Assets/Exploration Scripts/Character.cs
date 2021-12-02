@@ -35,7 +35,6 @@ public class Character : MonoBehaviour, IItemsEquipped
     public int ArmorId { get; set; }
     public byte Level { get; set; }
 
-
     void Start()
     {   
         controller = GetComponent<Rigidbody2D>();
@@ -111,7 +110,7 @@ public class Character : MonoBehaviour, IItemsEquipped
     ///</summary>
     public void ChangeStats()
     {
-        
+
     }
 
     //Skills

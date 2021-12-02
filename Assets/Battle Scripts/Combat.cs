@@ -34,7 +34,6 @@ public class Combat : MonoBehaviour
         player.GetEquippedItems();
         healthBar = GameObject.Find("Health Bar").GetComponent<HealthBar>();
 
-
         //Button component
         basicAttack = GameObject.Find("Basic Attack").GetComponent<Button>();
         secondButton = GameObject.Find("Second Button").GetComponent<Button>();
@@ -93,6 +92,11 @@ public class Combat : MonoBehaviour
             enemy.TakeDamage(damage);
             healthBar.SetHealth(Mathf.RoundToInt(enemy.currentHealth));
             NextTurn();
+        }
+        else
+        {
+            enemy.Turn();
+            NextTurn(); 
         }
     }
 
