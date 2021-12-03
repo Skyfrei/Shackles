@@ -148,7 +148,7 @@ public class Enemy : MonoBehaviour, IItemsEquipped
         if (equipped.Count >= 1)
         {
             var randomNumber = Random.Range(0.0f, 1.0f);
-            if (randomNumber == 0.99f)
+            if (randomNumber > 0.95f)
             {
                 foreach (Item item in this.equipped)
                 {
@@ -158,7 +158,7 @@ public class Enemy : MonoBehaviour, IItemsEquipped
                     }
                 }
             }
-            else if (randomNumber > 0.9f && randomNumber <= 0.99f)
+            else if (randomNumber > 0.9f && randomNumber <= 0.95f)
             {
             foreach (Item item in this.equipped)
                 {
