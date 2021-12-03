@@ -12,6 +12,7 @@ public class Character : MonoBehaviour, IItemsEquipped
     public static Character player;
 
     //Stats
+    [SerializeField]
     public float HP { get; set; }
     public float Armor { get; set; }
     public float ATK { get; set; }
@@ -123,6 +124,7 @@ public class Character : MonoBehaviour, IItemsEquipped
         if (criticalStruck = randomNumber <= CritChance ? true : false == true)
         {
             damage =  ATK + (ATK * 0.5f);
+            Debug.Log("Crit hit!");
         }
         else
         {
@@ -131,7 +133,7 @@ public class Character : MonoBehaviour, IItemsEquipped
         return damage;
     }
 
-    public void ProcBattleEffect(params float[] numbers)
+    public void ProcBattleEffect(Enemy enemy, params float[] numbers)
     {
         foreach(Item item in equipped)
             {
@@ -139,7 +141,7 @@ public class Character : MonoBehaviour, IItemsEquipped
                 {
                     foreach(EffectScriptableObject effect in item.itemEffects)
                     {
-                        effect.BattleEffect(numbers);
+                        effect.BattleEffect(this, enemy);
                     }
                 }
             }
@@ -175,7 +177,7 @@ public class Character : MonoBehaviour, IItemsEquipped
             {
                 foreach(EffectScriptableObject effect in item.itemEffects)
                 {
-                    effect.BattleEffect();
+                    // effect.BattleEffect();
                     effect.NonBattleEffect(this);
                 }
             }

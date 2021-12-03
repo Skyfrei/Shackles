@@ -11,6 +11,8 @@ public class EnemyScriptableObject : ScriptableObject
     public float maxhealth;
     public byte level;
     public float mana;
+    public float atk;
+    public float critChance = 0.15f;
     public List<ItemsScriptableObject> equipped;
 
     public void Print()

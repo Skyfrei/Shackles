@@ -7,7 +7,7 @@ public class CritChanceScriptableObject : EffectScriptableObject
 {
     public string description;
 
-    public override void BattleEffect(params float[] number)
+    public override void BattleEffect(Character player, Enemy enemy, params float[] number)
     {   
         Debug.Log("meme");
     }

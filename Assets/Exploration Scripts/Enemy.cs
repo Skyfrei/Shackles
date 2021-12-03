@@ -18,6 +18,8 @@ public class Enemy : MonoBehaviour, IItemsEquipped
     public float mana;
     public int armor;
     public byte level;
+    public float critChance;
+    public float ATK { get; set; }
     public List<ItemsScriptableObject> equippedSO;
     public List<Item> equipped;
 
@@ -35,6 +37,8 @@ public class Enemy : MonoBehaviour, IItemsEquipped
         mana = enemySO.mana;
         armor = enemySO.armor;
         level = enemySO.level;
+        critChance = enemySO.critChance;
+        ATK = enemySO.atk;
         maxHealth = enemySO.maxhealth;
         equippedSO = enemySO.equipped;
         foreach (ItemsScriptableObject itemSo in equippedSO)
@@ -82,7 +86,7 @@ public class Enemy : MonoBehaviour, IItemsEquipped
         float randomNumber = Random.Range(0.0f, 1.0f);
         if (randomNumber <= 0.75)
         {
-            BasicAttack();
+            BasicAttack(player);
         }
         else if (randomNumber > 0.75 && randomNumber <= 0.8)
         {
@@ -99,9 +103,31 @@ public class Enemy : MonoBehaviour, IItemsEquipped
 
 
     }
-    private void BasicAttack()
+    private float BasicAttack(Character player)
     {
-        
+        var randomNumber = Random.Range(0.0f, 1.0f);
+        bool criticalStruck = false;
+        float damage = 0.0f;
+        float actualDamage = damage - (0.35f * player.Armor);
+
+        if (criticalStruck = randomNumber <= critChance ? true : false == true)
+        {
+            damage =  ATK + (ATK * 0.5f);
+        }
+        else
+        {
+            damage = ATK;
+        }        
+        if (actualDamage <= 0)
+        {
+            player.HP-= 10;
+        }
+        else
+        {
+            player.HP -= damage - (0.35f * player.Armor);
+        }
+
+        return damage;
     }
     private void Skill2()
     {
@@ -164,7 +190,7 @@ public class Enemy : MonoBehaviour, IItemsEquipped
             }
         }
         
-        return equipped[equipped.Count - 1];
+        return new Item(Resources.Load("Health Potion") as ItemsScriptableObject);
     }
 
     ///<summary>

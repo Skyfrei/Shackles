@@ -90,7 +90,7 @@ public class Combat : MonoBehaviour
             // player.equipped[0].itemEffects[0].BattleEffect();
             float damageBeforeArmor = player.BasicAttack();
             float damageDealt = enemy.TakeDamage(damageBeforeArmor);
-            player.ProcBattleEffect(damageDealt);
+            player.ProcBattleEffect(enemy, damageDealt);
 
             healthBar.SetHealth(Mathf.RoundToInt(enemy.currentHealth));
             NextTurn();

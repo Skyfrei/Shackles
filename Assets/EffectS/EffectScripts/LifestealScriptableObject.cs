@@ -18,9 +18,9 @@ public class LifestealScriptableObject : EffectScriptableObject
         }
     }
 
-    public override void BattleEffect(params float[] number)
+    public override void BattleEffect(Character player, Enemy enemy, params float[] number)
     {   
-        
+        player.HP += number[0] * 0.12f;
     }
     public override void NonBattleEffect(Character player){}
 }

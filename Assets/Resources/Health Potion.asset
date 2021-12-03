@@ -14,6 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: 
   artwork: {fileID: 0}
+  attack: 0
+  defense: 0
+  critChance: 0
+  health: 0
   cost: 0
   itemName: 
   owned: 0
