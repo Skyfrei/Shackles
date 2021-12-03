@@ -118,20 +118,31 @@ public class Character : MonoBehaviour, IItemsEquipped
     {
         var randomNumber = Random.Range(0.0f, 1.0f);
         bool criticalStruck = false;
+        float damage = 0.0f;
 
+        if (criticalStruck = randomNumber <= CritChance ? true : false == true)
+        {
+            damage =  ATK + (ATK * 0.5f);
+        }
+        else
+        {
+            damage = ATK;
+        }
+        return damage;
+    }
+
+    public void ProcBattleEffect(params float[] numbers)
+    {
         foreach(Item item in equipped)
             {
                 if (item.ItemType == ItemType.Weapon)
                 {
-                    item.itemEffects[0].BattleEffect();
+                    foreach(EffectScriptableObject effect in item.itemEffects)
+                    {
+                        effect.BattleEffect(numbers);
+                    }
                 }
             }
-
-        if (criticalStruck = randomNumber <= CritChance ? true : false == true)
-        {
-            return ATK + (ATK * 0.5f);
-        }
-        return ATK;
     }
 
     public void Skill2()

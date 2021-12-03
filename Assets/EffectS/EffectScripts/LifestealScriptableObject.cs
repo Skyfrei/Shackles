@@ -17,10 +17,10 @@ public class LifestealScriptableObject : EffectScriptableObject
             description = "You are able to steal life from your opponent based on how much damage you deal.";
         }
     }
-    
-    public override void BattleEffect()
+
+    public override void BattleEffect(params float[] number)
     {   
-        Debug.Log("meme");
+        
     }
     public override void NonBattleEffect(Character player){}
 }

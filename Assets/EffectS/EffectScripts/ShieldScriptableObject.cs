@@ -20,7 +20,7 @@ public class ShieldScriptableObject : EffectScriptableObject
         }
     }
 
-    public override void BattleEffect()
+    public override void BattleEffect(params float[] number)
     {   
         Debug.Log("meme");
     }

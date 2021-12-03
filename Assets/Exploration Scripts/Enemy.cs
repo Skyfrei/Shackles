@@ -62,16 +62,18 @@ public class Enemy : MonoBehaviour, IItemsEquipped
         }
     }
 
-    public void TakeDamage(float damage)
+    public float TakeDamage(float damage)
     {
         float actualDamage = damage - (0.35f * this.armor);
         if (actualDamage <= 0)
         {
             this.currentHealth -= 30;
+            return 30.0f;
         }
         else
         {
             this.currentHealth -= damage - (0.35f * this.armor);
+            return damage - (0.35f * this.armor);
         }
     }
 
@@ -99,7 +101,7 @@ public class Enemy : MonoBehaviour, IItemsEquipped
     }
     private void BasicAttack()
     {
-
+        
     }
     private void Skill2()
     {

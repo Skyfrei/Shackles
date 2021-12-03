@@ -78,7 +78,7 @@ public class Combat : MonoBehaviour
 
     private void NextTurn()
     {
-        playerTurn = playerTurn;
+        playerTurn = !playerTurn;
     }
     
     public void BasicAttack()
@@ -88,8 +88,10 @@ public class Combat : MonoBehaviour
         if (playerTurn == true)
         {   
             // player.equipped[0].itemEffects[0].BattleEffect();
-            float damage = player.BasicAttack();
-            enemy.TakeDamage(damage);
+            float damageBeforeArmor = player.BasicAttack();
+            float damageDealt = enemy.TakeDamage(damageBeforeArmor);
+            player.ProcBattleEffect(damageDealt);
+
             healthBar.SetHealth(Mathf.RoundToInt(enemy.currentHealth));
             NextTurn();
         }

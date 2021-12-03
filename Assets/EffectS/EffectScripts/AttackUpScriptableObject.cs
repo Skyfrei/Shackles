@@ -7,9 +7,10 @@ public class AttackScriptableObject : EffectScriptableObject
 {
     public string description;
 
-    public override void BattleEffect()
+    public override void BattleEffect(params float[] number)
     {   
         Debug.Log("meme");
     }
+    
     public override void NonBattleEffect(Character player){}
 }

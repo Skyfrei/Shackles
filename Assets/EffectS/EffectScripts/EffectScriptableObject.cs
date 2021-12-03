@@ -7,7 +7,7 @@ using UnityEngine;
 public abstract class EffectScriptableObject : ScriptableObject
 {
     public virtual string Description{get; set; }
-    public abstract void BattleEffect(); 
+    public abstract void BattleEffect(params float[] number); 
     public abstract void NonBattleEffect(Character player); 
 }
 
