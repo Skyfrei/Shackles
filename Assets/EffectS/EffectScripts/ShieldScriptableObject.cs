@@ -24,5 +24,5 @@ public class ShieldScriptableObject : EffectScriptableObject
     {   
         Debug.Log("meme");
     }
-    public override void NonBattleEffect(Character player){}
+    public override void NonBattleEffect(Units unit){}
 }

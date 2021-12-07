@@ -22,5 +22,5 @@ public class LifestealScriptableObject : EffectScriptableObject
     {   
         player.HP += number[0] * 0.12f;
     }
-    public override void NonBattleEffect(Character player){}
+    public override void NonBattleEffect(Units unit){}
 }

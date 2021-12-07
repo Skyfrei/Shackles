@@ -45,8 +45,8 @@ public class Combat : MonoBehaviour
         manaText = GameObject.Find("Mana").GetComponent<Text>();
         
         //Linking Health bar with enemy health and repositioning enemy so it looks better on screen
-        enemy.currentHealth = enemy.maxHealth;
-        healthBar.SetMaxHealth(Mathf.RoundToInt(enemy.maxHealth));
+        enemy.HP = enemy.MaxHealth;
+        healthBar.SetMaxHealth(Mathf.RoundToInt(enemy.MaxHealth));
 
     }
 
@@ -54,7 +54,7 @@ public class Combat : MonoBehaviour
     {
         healthText.text = "Health: " + $"{player.HP}";
         manaText.text = "Mana: " + $"{player.Mana}";
-        if (enemy.currentHealth <= 0)
+        if (enemy.HP <= 0)
         {
             Item droppedItem = enemy.DropItem();
             player.inventory.Add(droppedItem);
@@ -74,6 +74,11 @@ public class Combat : MonoBehaviour
             SceneChanger sc = new SceneChanger();
             sc.ChangeToNormalScreen();
         }
+        if (playerTurn == false)
+        {
+            enemy.Turn();
+            NextTurn();
+        }
     }
 
     private void NextTurn()
@@ -83,67 +88,38 @@ public class Combat : MonoBehaviour
     
     public void BasicAttack()
     {
-        // bool meme1 = player.items[0].itemEffects[0] is IBattleEffect;
+        // player.equipped[0].itemEffects[0].BattleEffect();
+        float damageBeforeArmor = player.BasicAttack();
+        float damageDealt = enemy.TakeDamage(damageBeforeArmor);
+        player.ProcBattleEffect(enemy, damageDealt);
+        healthBar.SetHealth(Mathf.RoundToInt(enemy.HP));
 
-        if (playerTurn == true)
-        {   
-            // player.equipped[0].itemEffects[0].BattleEffect();
-            float damageBeforeArmor = player.BasicAttack();
-            float damageDealt = enemy.TakeDamage(damageBeforeArmor);
-            player.ProcBattleEffect(enemy, damageDealt);
-
-            healthBar.SetHealth(Mathf.RoundToInt(enemy.currentHealth));
-            NextTurn();
-        }
-        else
-        {
-            enemy.Turn();
-            NextTurn(); 
-        }
+        NextTurn();
     }
     public void Skill2()
     {
-        if (playerTurn == true)
-        {   
-            // player.equipped[0].itemEffects[0].BattleEffect();
-            player.Skill2();
-            NextTurn();
-        }
-        else
-        {
-            enemy.Turn();
-            NextTurn(); 
-        }
+        // player.equipped[0].itemEffects[0].BattleEffect();
+        player.Skill2();
+
+        NextTurn();
     }
     public void Skill3()
-    {
-        if (playerTurn == true)
-        {   
-            // player.equipped[0].itemEffects[0].BattleEffect();
-            player.Skill3();
-            NextTurn();
-        }
-        else
-        {
-            enemy.Turn();
-            NextTurn(); 
-        }
+    {   
+        // player.equipped[0].itemEffects[0].BattleEffect();
+        player.Skill3();
+
+        NextTurn();
     }
     public void Skill4()
-    {
-        if (playerTurn == true)
-        {   
-            // player.equipped[0].itemEffects[0].BattleEffect();
-            player.Skill4();
-            healthBar.SetHealth(Mathf.RoundToInt(enemy.currentHealth));
-            NextTurn();
-        }
-        else
-        {
-            enemy.Turn();
-            NextTurn(); 
-        }
+    { 
+        // player.equipped[0].itemEffects[0].BattleEffect();
+        player.Skill4();
+        player.ProcBattleEffect(enemy);
+        healthBar.SetHealth(Mathf.RoundToInt(enemy.HP));
+
+        NextTurn();
     }
+
     ///<summary>
     /// <para>Secondary Button.</para>
     /// <para>Opens Item menu when clicked.</para>

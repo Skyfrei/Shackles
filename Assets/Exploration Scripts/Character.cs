@@ -3,7 +3,17 @@ using UnityEngine;
 using Skills;
 using ItemsEquipped;
 
-public class Character : MonoBehaviour, IItemsEquipped
+public abstract class Units : MonoBehaviour
+{
+    public abstract float HP { get; set; }
+    public abstract float MaxHealth { get; set; }
+    public abstract float Armor { get; set; }
+    public abstract float ATK { get; set; }
+    public abstract float Mana { get; set; }
+    public abstract float CritChance { get; set; }
+}
+
+public class Character : Units, IItemsEquipped
 {
     // Start is called before the first frame update
     private Rigidbody2D controller;
@@ -12,12 +22,12 @@ public class Character : MonoBehaviour, IItemsEquipped
     public static Character player;
 
     //Stats
-    [SerializeField]
-    public float HP { get; set; }
-    public float Armor { get; set; }
-    public float ATK { get; set; }
-    public float Mana { get; set; }
-    public float CritChance { get; set; }
+    public override float HP { get; set; }
+    public override float MaxHealth { get; set; }
+    public override float Armor { get; set; }
+    public override float ATK { get; set; }
+    public override float Mana { get; set; }
+    public override float CritChance { get; set; }
     public int Gold { get; set; }
     // public float CritDamage{get; set;}
     // private float critChance = 10.0f;
@@ -41,9 +51,10 @@ public class Character : MonoBehaviour, IItemsEquipped
         controller = GetComponent<Rigidbody2D>();
         Gold = 300;
         Level = 1;
-        HP = 150;
-        Armor = 100;
-        ATK = 100;
+        HP = 100;
+        MaxHealth = 100;
+        Armor = 50;
+        ATK = 50;
         Mana = 100;
         CritChance = 0.15f;
     }
@@ -63,6 +74,13 @@ public class Character : MonoBehaviour, IItemsEquipped
         Vector2 move = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         controller.position += move * Time.deltaTime * player_speed;
         Position = controller.position;
+    }
+
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            this.UseHPotion();
+        }
     }
     ///<summary>
     /// Getting items from inventory scriptable object list to inventory. Converts item scriptable object into item.
@@ -106,6 +124,23 @@ public class Character : MonoBehaviour, IItemsEquipped
 
     }
 
+    private void UseHPotion()
+    {
+        Debug.Log(player.HP);
+        foreach(Item item in inventory)
+            {
+                if (item.ItemType == ItemType.Potion)
+                {
+                    foreach(HealScriptableObject effect in item.itemEffects)
+                    {
+                        effect.PotionEffect(this);
+                    }
+                }
+                inventory.Remove(item);
+            }
+        Debug.Log($"After: {player.HP}");
+    }
+
     ///<summary>
     /// Changes player stats whenever player changes equipped gear. 
     ///</summary>
@@ -144,16 +179,26 @@ public class Character : MonoBehaviour, IItemsEquipped
                         effect.BattleEffect(this, enemy);
                     }
                 }
+                if (item.ItemType == ItemType.Ring)
+                {
+                    foreach(EffectScriptableObject effect in item.itemEffects)
+                    {
+                        effect.BattleEffect(player, enemy);
+                    }
+                }
             }
     }
 
     public void Skill2()
     {
-        foreach(Item item in equipped)
+            foreach(Item item in equipped)
             {
                 if (item.ItemType == ItemType.Helmet)
                 {
-                    item.itemEffects[0].NonBattleEffect(this);
+                    foreach(EffectScriptableObject effect in item.itemEffects)
+                    {
+                        effect.NonBattleEffect(this);
+                    }
                 }
             }
     }
@@ -161,36 +206,40 @@ public class Character : MonoBehaviour, IItemsEquipped
     public void Skill3()
     {
         foreach(Item item in equipped)
+        {
+            if (item.ItemType == ItemType.Armor)
             {
-                if (item.ItemType == ItemType.Armor)
+                foreach(EffectScriptableObject effect in item.itemEffects)
                 {
-                    item.itemEffects[0].NonBattleEffect(this);
+                    effect.NonBattleEffect(this);
                 }
             }
+        }
     }
 
     public float Skill4()
     {
-        foreach(Item item in equipped)
-        {
-            if (item.ItemType == ItemType.Ring)
+         foreach(Item item in equipped)
             {
-                foreach(EffectScriptableObject effect in item.itemEffects)
+                if (item.ItemType == ItemType.Ring)
                 {
-                    // effect.BattleEffect();
-                    effect.NonBattleEffect(this);
+                    foreach(EffectScriptableObject effect in item.itemEffects)
+                    {
+                        effect.NonBattleEffect(this);
+                    }
                 }
             }
-        }        
+            
         return 0.0f;
     }
 
     public void LevelUp()
     {
         this.Level++;
-        this.HP += 100;
+        this.HP = MaxHealth;
         this.Armor += 15;
         this.ATK += 15;
         this.Mana += 10;
+        MaxHealth += 50;
     }
 }

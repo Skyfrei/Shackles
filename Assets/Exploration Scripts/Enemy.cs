@@ -5,7 +5,7 @@ using ItemsEquipped;
 
 // Class that handles enemy position in exploration. 
 // Enemy dialog, position, if the enemy has fought or not goes in this script.
-public class Enemy : MonoBehaviour, IItemsEquipped 
+public class Enemy : Units, IItemsEquipped 
 {
     [SerializeField]
     private EnemyScriptableObject enemySO;
@@ -13,13 +13,21 @@ public class Enemy : MonoBehaviour, IItemsEquipped
     private SpriteRenderer artwork;
     public int id;
     private Character player;
-    public float maxHealth;
-    public float currentHealth;
-    public float mana;
-    public int armor;
+    public override float MaxHealth { get; set; }
+    public override float HP { get; set; }
+    public override float Mana { get; set; }
+    public override float Armor { get; set; }
     public byte level;
-    public float critChance;
-    public float ATK { get; set; }
+    public override float CritChance { get; set; }
+    public override float ATK { get; set; }
+    
+    
+    
+    
+    
+
+
+
     public List<ItemsScriptableObject> equippedSO;
     public List<Item> equipped;
 
@@ -34,12 +42,12 @@ public class Enemy : MonoBehaviour, IItemsEquipped
         player = GameObject.FindObjectOfType<Character>();
         artwork.sprite = enemySO.sprite;
         id = enemySO.id;
-        mana = enemySO.mana;
-        armor = enemySO.armor;
+        Mana = enemySO.mana;
+        Armor = enemySO.armor;
         level = enemySO.level;
-        critChance = enemySO.critChance;
+        CritChance = enemySO.critChance;
         ATK = enemySO.atk;
-        maxHealth = enemySO.maxhealth;
+        MaxHealth = enemySO.maxhealth;
         equippedSO = enemySO.equipped;
         foreach (ItemsScriptableObject itemSo in equippedSO)
         {
@@ -68,16 +76,16 @@ public class Enemy : MonoBehaviour, IItemsEquipped
 
     public float TakeDamage(float damage)
     {
-        float actualDamage = damage - (0.35f * this.armor);
+        float actualDamage = damage - (0.35f * this.Armor);
         if (actualDamage <= 0)
         {
-            this.currentHealth -= 30;
+            this.HP -= 30;
             return 30.0f;
         }
         else
         {
-            this.currentHealth -= damage - (0.35f * this.armor);
-            return damage - (0.35f * this.armor);
+            this.HP -= damage - (0.35f * this.Armor);
+            return damage - (0.35f * this.Armor);
         }
     }
 
@@ -100,46 +108,83 @@ public class Enemy : MonoBehaviour, IItemsEquipped
         {
             Skill4();
         }
-
-
     }
+
     private float BasicAttack(Character player)
     {
         var randomNumber = Random.Range(0.0f, 1.0f);
         bool criticalStruck = false;
-        float damage = 0.0f;
-        float actualDamage = damage - (0.35f * player.Armor);
+        float damage = ATK;
+        float actualDamage = 0.0f;
 
-        if (criticalStruck = randomNumber <= critChance ? true : false == true)
+        if (criticalStruck = randomNumber <= CritChance ? true : false == true)
         {
             damage =  ATK + (ATK * 0.5f);
         }
-        else
+
+        actualDamage = damage - (0.5f * player.Armor);
+        if (criticalStruck == true)
         {
-            damage = ATK;
-        }        
+            Debug.Log($"Enemy critical struck for {damage} damage.");
+        }
+        else 
+        {
+            Debug.Log($"Enemy deals {damage} damage.");
+        }
+ 
         if (actualDamage <= 0)
         {
             player.HP-= 10;
         }
         else
         {
-            player.HP -= damage - (0.35f * player.Armor);
+            player.HP -= actualDamage;
         }
-
-        return damage;
+        
+        return actualDamage;
     }
     private void Skill2()
     {
-
+        foreach(Item item in equipped)
+            {
+                if (item.ItemType == ItemType.Helmet)
+                {
+                    foreach(EffectScriptableObject effect in item.itemEffects)
+                    {
+                        effect.NonBattleEffect(this);
+                    }
+                }
+            }
+            this.Mana -= 20;
     }
     private void Skill3()
     {
-
+        foreach(Item item in equipped)
+            {
+                if (item.ItemType == ItemType.Armor)
+                {
+                    foreach(EffectScriptableObject effect in item.itemEffects)
+                    {
+                        effect.NonBattleEffect(this);
+                    }
+                }
+            }
+            this.Mana -= 20;
     }
     private void Skill4()
     {
-
+        foreach(Item item in equipped)
+            {
+                if (item.ItemType == ItemType.Ring)
+                {
+                    foreach(EffectScriptableObject effect in item.itemEffects)
+                    {
+                        effect.NonBattleEffect(this);
+                        effect.BattleEffect(player, this);
+                    }
+                }
+            }
+        this.Mana -= 40;
     }
 
     //Item drops from enemies

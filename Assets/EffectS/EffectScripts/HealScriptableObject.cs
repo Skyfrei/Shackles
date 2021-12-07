@@ -6,12 +6,12 @@ public class HealScriptableObject : EffectScriptableObject
     public string description;
     
     public override void BattleEffect(Character player, Enemy enemy, params float[] number){}
-    public override void NonBattleEffect(Character player)
+    public override void NonBattleEffect(Units unit)
     {
         //Actual heal
     }
-    public void PotionEffect(Character player)
+    public void PotionEffect(Units unit)
     {
-        player.HP += 20;
+        unit.HP += 20;
     }
 }
