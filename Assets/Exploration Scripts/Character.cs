@@ -16,7 +16,7 @@ public abstract class Units : MonoBehaviour
 public class Character : Units, IItemsEquipped
 {
     // Start is called before the first frame update
-    private Rigidbody2D controller;
+    public Rigidbody2D controller;
     public float player_speed;
     public Vector2 Position { get; set; }
     public static Character player;
@@ -28,6 +28,8 @@ public class Character : Units, IItemsEquipped
     public override float ATK { get; set; }
     public override float Mana { get; set; }
     public override float CritChance { get; set; }
+    public float Experience { get; set; }
+    public float MaxExperienceLevel { get; set; }
     public int Gold { get; set; }
     // public float CritDamage{get; set;}
     // private float critChance = 10.0f;
@@ -56,6 +58,8 @@ public class Character : Units, IItemsEquipped
         Armor = 50;
         ATK = 50;
         Mana = 100;
+        Experience = 0.0f;
+        MaxExperienceLevel = 100.0f;
         CritChance = 0.15f;
     }
 
@@ -76,12 +80,13 @@ public class Character : Units, IItemsEquipped
         Position = controller.position;
     }
 
-    private void Update() {
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            this.UseHPotion();
-        }
-    }
+    // private void Update() {
+    //     if (Input.GetKeyDown(KeyCode.L))
+    //     {
+    //         this.UseHPotion();
+    //     }
+    // }
+
     ///<summary>
     /// Getting items from inventory scriptable object list to inventory. Converts item scriptable object into item.
     ///</summary>
@@ -110,7 +115,7 @@ public class Character : Units, IItemsEquipped
 
     }
 
-    public void UnequippItem()
+    public void UnequipItem()
     {
 
     }
@@ -126,7 +131,6 @@ public class Character : Units, IItemsEquipped
 
     private void UseHPotion()
     {
-        Debug.Log(player.HP);
         foreach(Item item in inventory)
             {
                 if (item.ItemType == ItemType.Potion)
@@ -138,7 +142,6 @@ public class Character : Units, IItemsEquipped
                 }
                 inventory.Remove(item);
             }
-        Debug.Log($"After: {player.HP}");
     }
 
     ///<summary>
@@ -236,10 +239,12 @@ public class Character : Units, IItemsEquipped
     public void LevelUp()
     {
         this.Level++;
+        this.Experience = Experience - MaxExperienceLevel;
         this.HP = MaxHealth;
         this.Armor += 15;
         this.ATK += 15;
         this.Mana += 10;
         MaxHealth += 50;
+        MaxExperienceLevel += 50.0f;
     }
 }

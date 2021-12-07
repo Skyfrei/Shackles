@@ -59,6 +59,12 @@ public class Combat : MonoBehaviour
             Item droppedItem = enemy.DropItem();
             player.inventory.Add(droppedItem);
             Debug.Log($"You have received {droppedItem.itemName} by defeating {enemy.name}");
+            
+            player.Experience += 20 * enemy.level;
+            if (player.Experience >= player.MaxExperienceLevel)
+            {
+                player.LevelUp();
+            }
             SceneChanger sc = new SceneChanger();
             player.player_speed = 5.0f;
             Destroy(enemy.gameObject);
@@ -69,6 +75,7 @@ public class Combat : MonoBehaviour
         {
             player.enemiesFough.Remove(enemy.id);
             player.player_speed = 5.0f;
+            player.controller.position = new Vector2(player.Position.x - 1, player.Position.y - 1);
             Destroy(enemy.gameObject);
             DontDestroyOnLoad(player);
             SceneChanger sc = new SceneChanger();
