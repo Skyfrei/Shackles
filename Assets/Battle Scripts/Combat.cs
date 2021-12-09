@@ -24,7 +24,8 @@ public class Combat : MonoBehaviour
     public Text manaText;
 
     // Temporary variables that hold the players position before battle
- 
+    private Vector2 playerBeforeCombat;
+    private Vector2 enemyBeforeCombat;
 
     void Start()
     {
@@ -48,12 +49,20 @@ public class Combat : MonoBehaviour
         enemy.HP = enemy.MaxHealth;
         healthBar.SetMaxHealth(Mathf.RoundToInt(enemy.MaxHealth));
 
+        playerBeforeCombat = player.Position;
+        enemyBeforeCombat = enemy.transform.position;
+        player.controller.position = new Vector2(-5, -0.9f);
+        enemy.transform.position = new Vector2(5, 2);
+
+        enemy.ChangeStats();
+        player.ChangeStats();
     }
 
     private void FixedUpdate()
     {
         healthText.text = "Health: " + $"{player.HP}";
         manaText.text = "Mana: " + $"{player.Mana}";
+        
         if (enemy.HP <= 0)
         {
             Item droppedItem = enemy.DropItem();
@@ -67,6 +76,10 @@ public class Combat : MonoBehaviour
             }
             SceneChanger sc = new SceneChanger();
             player.player_speed = 5.0f;
+
+            player.controller.position = playerBeforeCombat;
+            enemy.transform.position = enemyBeforeCombat;
+
             Destroy(enemy.gameObject);
             DontDestroyOnLoad(player);
             sc.ChangeToNormalScreen();

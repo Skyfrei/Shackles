@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +7,10 @@ public class Item
     public int id;
     public int cost;
     public bool owned;
+    public int attack;
+    public int defense;
+    public int health;
+    public float critChance;
     public List<int> components;
     public List<EffectScriptableObject> itemEffects;
     public ItemType ItemType;
@@ -33,6 +36,10 @@ public class Item
             ItemType = itemSO.itemTypeEnum;
             ItemRarity = itemSO.itemRarityEnum;
             owned = itemSO.owned;
+            attack = itemSO.attack;
+            defense = itemSO.defense;
+            critChance = itemSO.critChance;
+            health = itemSO.health;
         }
     }
     public Item(ItemsScriptableObject itemSo)
@@ -49,6 +56,10 @@ public class Item
             this.ItemType = itemSo.itemTypeEnum;
             this.ItemRarity = itemSo.itemRarityEnum;
             this.owned = itemSo.owned;
+            this.attack = itemSo.attack;
+            this.critChance = itemSo.critChance;
+            this.defense = itemSo.defense;
+            this.health = itemSo.health;
         }
     }
 }

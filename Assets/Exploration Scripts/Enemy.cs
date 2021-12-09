@@ -20,13 +20,6 @@ public class Enemy : Units, IItemsEquipped
     public byte level;
     public override float CritChance { get; set; }
     public override float ATK { get; set; }
-    
-    
-    
-    
-    
-
-
 
     public List<ItemsScriptableObject> equippedSO;
     public List<Item> equipped;
@@ -243,7 +236,14 @@ public class Enemy : Units, IItemsEquipped
     ///</summary>
     public void ChangeStats()
     {
-
+        
+        foreach(Item item in equipped)
+        {
+            this.MaxHealth += item.health;
+            this.ATK += item.attack;
+            this.Armor += item.defense;
+            this.CritChance += item.critChance;     
+        }
     }
     
     private IEnumerator Timer()
