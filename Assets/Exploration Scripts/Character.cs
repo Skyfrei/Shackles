@@ -47,6 +47,8 @@ public class Character : Units, IItemsEquipped
     public int RingId { get; set; }
     public int ArmorId { get; set; }
     public byte Level { get; set; }
+    
+    public Canvas pressF;
 
     void Start()
     {   
@@ -61,6 +63,7 @@ public class Character : Units, IItemsEquipped
         Experience = 0.0f;
         MaxExperienceLevel = 100.0f;
         CritChance = 0.15f;
+        pressF = GameObject.Find("PressF").GetComponent<Canvas>();
     }
 
     private void Awake() {

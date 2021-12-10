@@ -64,7 +64,9 @@ public class Enemy : Units, IItemsEquipped
                 player.player_speed = 0f;
                 StartCoroutine("Timer");
             }
+            player.pressF.enabled = true;
         }
+        player.pressF.enabled = false;
     }
 
     public float TakeDamage(float damage)
