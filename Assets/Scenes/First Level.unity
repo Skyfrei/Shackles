@@ -2377,7 +2377,7 @@ Transform:
   - {fileID: 32887302}
   - {fileID: 147774475}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &132921033
 GameObject:
@@ -2773,7 +2773,7 @@ RectTransform:
   m_Children:
   - {fileID: 2137548866}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4376,7 +4376,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4496,9 +4496,7 @@ MonoBehaviour:
   enemySO: {fileID: 11400000, guid: e0f39d9e8dd8d904b9698878003feba9, type: 2}
   artwork: {fileID: 224819921}
   id: 0
-  maxHealth: 0
-  currentHealth: 0
-  armor: 0
+  level: 0
   equippedSO: []
   equipped: []
 --- !u!1 &225764457
@@ -5135,10 +5133,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f4f7396bd8249f48af38d2935620f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controller: {fileID: 0}
   player_speed: 5
   enemiesFough: 
   inventory: []
   equipped: []
+  pressF: {fileID: 0}
 --- !u!50 &260799685
 Rigidbody2D:
   serializedVersion: 4
@@ -5258,7 +5258,7 @@ RectTransform:
   m_Children:
   - {fileID: 763165114}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6007,9 +6007,7 @@ MonoBehaviour:
   enemySO: {fileID: 11400000, guid: 2d127b459af866240a2fbaf380acd660, type: 2}
   artwork: {fileID: 296643281}
   id: 0
-  maxHealth: 0
-  currentHealth: 0
-  armor: 0
+  level: 0
   equippedSO: []
   equipped: []
 --- !u!50 &296643279
@@ -6122,7 +6120,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9054,7 +9052,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -12374,9 +12372,7 @@ MonoBehaviour:
   enemySO: {fileID: 11400000, guid: e2b6258eb27782449b290646c9da0cf9, type: 2}
   artwork: {fileID: 689508965}
   id: 0
-  maxHealth: 0
-  currentHealth: 0
-  armor: 0
+  level: 0
   equippedSO: []
   equipped: []
 --- !u!50 &689508963
@@ -12489,7 +12485,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -12531,9 +12527,7 @@ MonoBehaviour:
   enemySO: {fileID: 11400000, guid: 944bfa4822e7018408c68fbd84276967, type: 2}
   artwork: {fileID: 705825932}
   id: 0
-  maxHealth: 0
-  currentHealth: 0
-  armor: 0
+  level: 0
   equippedSO: []
   equipped: []
 --- !u!50 &705825930
@@ -12646,7 +12640,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -13843,7 +13837,6 @@ GameObject:
   - component: {fileID: 763165117}
   - component: {fileID: 763165116}
   - component: {fileID: 763165115}
-  - component: {fileID: 763165118}
   m_Layer: 5
   m_Name: PressF
   m_TagString: Untagged
@@ -13932,18 +13925,6 @@ Canvas:
   m_SortingLayerID: -1076183649
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &763165118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 763165113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48e1444b341b23b40848ed654fd02657, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &771496521
 GameObject:
   m_ObjectHideFlags: 0
@@ -14242,7 +14223,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: James Ketchup
+  m_Text: 
 --- !u!222 &798202587
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14345,7 +14326,7 @@ RectTransform:
   m_Children:
   - {fileID: 2059610442}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -14361,9 +14342,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 805339686}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16ff99f471466234b9eae0811d4bb5eb, type: 3}
+  m_Script: {fileID: 11500000, guid: 7f52d44277eaba24ca111ab4fc290d5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogue:
+    name: Rock Smith
+    sentences:
+    - 'Hello traveler. My name is Rock Smith!
+
+'
+    - I am here to guide you on your jorney to enlightnentment.
+    - Here are 2 items you can use for your journey. Be safe out there. Traveler
+      gahgahgahhhhh.
 --- !u!1 &819989222
 GameObject:
   m_ObjectHideFlags: 0
@@ -14796,6 +14786,51 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &855268334
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 855268336}
+  - component: {fileID: 855268335}
+  m_Layer: 0
+  m_Name: DialogueManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &855268335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855268334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a35264a121e2d542813409ba658352c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: {fileID: 798202586}
+  dialogueText: {fileID: 1933145034}
+--- !u!4 &855268336
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855268334}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 503.6746, y: 291.19785, z: -2874.2021}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &858054862
 GameObject:
   m_ObjectHideFlags: 0
@@ -15372,7 +15407,7 @@ Transform:
   - {fileID: 1988557183}
   - {fileID: 1484338160}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &889587751
 GameObject:
@@ -17160,7 +17195,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &987748277
 GameObject:
@@ -23163,7 +23198,7 @@ Transform:
   - {fileID: 1785437978}
   - {fileID: 2107294747}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1328784258
 GameObject:
@@ -29147,9 +29182,7 @@ MonoBehaviour:
   enemySO: {fileID: 11400000, guid: fd48f434ae61d27439b87db48e31d3a1, type: 2}
   artwork: {fileID: 1714924658}
   id: 0
-  maxHealth: 0
-  currentHealth: 0
-  armor: 0
+  level: 0
   equippedSO: []
   equipped: []
 --- !u!50 &1714924656
@@ -29262,7 +29295,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -87189,7 +87222,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1772571424
 GameObject:
@@ -89900,11 +89933,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "The Jujutsu Kaisen chapters are collected and published by Shueisha, with
-    sixteen tank\u014Dbon volumes released as of June 2021. The story follows high
-    school student Yuji Itadori as he joins a secret organization of Jujutsu Sorcerers
-    in order to kill a powerful Curse named Ryomen Sukuna, of whom Yuji becomes the
-    host."
+  m_Text: 
 --- !u!222 &1933145035
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -94212,7 +94241,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -22969.283, y: 16650.973}
+  m_AnchoredPosition: {x: -182737.31, y: 141187.17}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2145574861
