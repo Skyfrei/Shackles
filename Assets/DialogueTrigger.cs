@@ -7,9 +7,11 @@ public class DialogueTrigger : MonoBehaviour
     public Dialogue dialogue;
     private Canvas canvas;
     private bool isShowing;
+    private DialogueManager manager;
 
     private void Start() {
         canvas = GetComponent<Canvas>();
+        manager = FindObjectOfType<DialogueManager>();
     }
 
     void Update()
@@ -17,16 +19,16 @@ public class DialogueTrigger : MonoBehaviour
         if (Input.GetKeyUp("f"))
         {
             TriggerDialogue();
-            canvas.enabled = !canvas.enabled;
+            //canvas.enabled = !canvas.enabled;
         }   
         if (Input.GetMouseButtonDown(0))
         {
-            FindObjectOfType<DialogueManager>().DisplayNextSentence();
+            manager.DisplayNextSentence();
         }
     }
 
     public void TriggerDialogue()
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+        manager.StartDialogue(dialogue);
     }
 }
