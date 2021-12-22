@@ -1,3 +1,24 @@
 {
-    
+    "character":[
+        {
+            "id": 0,
+            "pastStory": true,
+            "story": [
+                "Hello, my name's mister",
+                "I am 15 year old",
+                "And i think so gucci boy."
+            ],
+            "repeat": "HeHe BoY"
+        },
+        {
+            "id": 1,
+            "pastStory": true,
+            "story": [
+                "Hello, my name's mister",
+                "I am 15 year old",
+                "And i think so gucci boy."
+            ],
+            "repeat": "HeHe BoY!"
+        }
+    ]
 }
