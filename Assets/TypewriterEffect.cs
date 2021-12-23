@@ -15,9 +15,7 @@ public class TypewriterEffect : MonoBehaviour
 
     private IEnumerator TypeText(string textToType, TMP_Text textLabel)
     {
-
         yield return new WaitForSeconds(2);
-
         
         float t = 0;
         int charIndex = 0;
@@ -32,7 +30,10 @@ public class TypewriterEffect : MonoBehaviour
 
             yield return null;
         }
-
         textLabel.text = textToType;
+    }
+    public void TypeCharName(string charName, TMP_Text textLabel)
+    {
+        textLabel.text = charName;
     }
 }

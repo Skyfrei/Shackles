@@ -3,6 +3,7 @@
         {
             "id": 0,
             "pastStory": true,
+            "characterName": "John smith",
             "story": [
                 "Hello, my name's mister",
                 "I am 15 year old",
@@ -13,6 +14,7 @@
         {
             "id": 1,
             "pastStory": true,
+            "characterName": "",
             "story": [
                 "Hello, my name's mister",
                 "I am 15 year old",
