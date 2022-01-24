@@ -66,6 +66,7 @@ public class DialogueUI : MonoBehaviour
                 // {
                 //     typeWriterObj.Run("HEYYY", dialogue_text);
                 // }
+                ////PLEASE
                 
                 
                 break;
